@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714833234
+::res://::1715020885
 icon.svg::CompressedTexture2D::5579280385701293324::1714501131::1714501139::1::::<><>::
 LICENSE & CREDITS.txt::TextFile::-1::1714832759::0::1::::<><>::
+platform.tscn::PackedScene::4218256277469639129::1715020885::0::1::::<><>::uid://cynu43dgpjyoj::::res://Assets/sprites/platforms.png
 ::res://Assets/::1714832773
 ::res://Assets/fonts/::1714832765
 PixelOperator8-Bold.ttf::FontFile::7985643864708409812::1714832759::1714832765::1::::<><>::
@@ -23,8 +24,8 @@ platforms.png::CompressedTexture2D::6485478128961584509::1714832759::1714832773:
 slime_green.png::CompressedTexture2D::9083918293006150383::1714832759::1714832773::1::::<><>::
 slime_purple.png::CompressedTexture2D::7378111335152095886::1714832759::1714832773::1::::<><>::
 world_tileset.png::CompressedTexture2D::6211824038584379944::1714832759::1714832773::1::::<><>::
-::res://Scenes/::1714833473
-game.tscn::PackedScene::7499055649020020937::1714833449::0::1::::<><>::uid://b8usw0nugvljn::::res://Scenes/player.tscn
-player.tscn::PackedScene::4745073606248845235::1714833485::0::1::::<><>::uid://ceh0frm8f1o42::::res://Assets/sprites/knight.png<>res://Scenes/player.gd
-player.gd::GDScript::-1::1714833470::0::1::::<>CharacterBody2D<>::
-::res://Scripts/::1714832732
+::res://Scenes/::1714835137
+game.tscn::PackedScene::7499055649020020937::1714835137::0::1::::<><>::uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://curb3mrs2pv6o::::res://Assets/sprites/world_tileset.png
+player.tscn::PackedScene::4745073606248845235::1715020954::0::1::::<><>::uid://ceh0frm8f1o42::::res://Assets/sprites/knight.png<>res://Scripts/player.gd
+::res://Scripts/::1714833621
+player.gd::GDScript::-1::1714833621::0::1::::<>CharacterBody2D<>::
