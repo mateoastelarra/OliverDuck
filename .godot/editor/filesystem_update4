@@ -2,3 +2,5 @@ res://platform.tscn
 res://Scenes/player.tscn
 res://Scenes/game.tscn
 res://Scenes/platform.tscn
+res://Scenes/Coin.tscn
+res://Scripts/Coin.gd
