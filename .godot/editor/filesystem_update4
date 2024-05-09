@@ -9,3 +9,4 @@ res://Scripts/killzone.gd
 res://Scripts/player.gd
 res://Scripts/game_manager.gd
 res://Scripts/coin.gd
+res://default_bus_layout.tres
