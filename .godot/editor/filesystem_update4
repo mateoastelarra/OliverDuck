@@ -7,3 +7,5 @@ res://Scenes/Coin.tscn
 res://Scenes/killzone.tscn
 res://Scripts/killzone.gd
 res://Scripts/player.gd
+res://Scripts/game_manager.gd
+res://Scripts/coin.gd
