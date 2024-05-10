@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=16 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
 [ext_resource type="Texture2D" uid="uid://curb3mrs2pv6o" path="res://Assets/sprites/world_tileset.png" id="2_3b8na"]
 [ext_resource type="PackedScene" uid="uid://b1dmcgw3t3y0x" path="res://Scenes/platform.tscn" id="3_rgu3y"]
 [ext_resource type="PackedScene" uid="uid://cc4tcq52mqt75" path="res://Scenes/Coin.tscn" id="4_m16pa"]
+[ext_resource type="PackedScene" uid="uid://cbubitgp263p0" path="res://Scenes/gun.tscn" id="4_sdplr"]
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="5_dj7mj"]
 [ext_resource type="PackedScene" uid="uid://4hxx6kcc8uij" path="res://Scenes/slime.tscn" id="6_h67em"]
 [ext_resource type="FontFile" uid="uid://c2kfs7ehcrn4u" path="res://Assets/fonts/PixelOperator8.ttf" id="7_yuh8e"]
@@ -550,3 +551,6 @@ theme_override_colors/font_color = Color(0.0313726, 0.129412, 0.372549, 1)
 theme_override_fonts/font = ExtResource("7_yuh8e")
 theme_override_font_sizes/font_size = 8
 text = "Space to Jump"
+
+[node name="Gun" parent="." instance=ExtResource("4_sdplr")]
+position = Vector2(0, 0)
