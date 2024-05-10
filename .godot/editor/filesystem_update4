@@ -1,12 +1,9 @@
-res://Scenes/slime.tscn
-res://Scripts/slime.gd
 res://Scenes/game.tscn
 res://Scenes/player.tscn
 res://Scenes/platform.tscn
 res://Scenes/Coin.tscn
 res://Scenes/killzone.tscn
-res://Scripts/killzone.gd
-res://Scripts/player.gd
-res://Scripts/game_manager.gd
+res://Scenes/slime.tscn
+res://Scenes/bullet.tscn
 res://Scripts/coin.gd
-res://default_bus_layout.tres
+res://Scripts/bullet.gd
