@@ -12,3 +12,5 @@ res://Scripts/game_manager.gd
 res://game_manager.gd
 res://Scripts/Globals.gd
 res://Scripts/gun.gd
+res://Scripts/bullet.gd
+res://default_bus_layout.tres
