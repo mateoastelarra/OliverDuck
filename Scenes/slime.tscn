@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://4hxx6kcc8uij"]
+[gd_scene load_steps=11 format=3 uid="uid://4hxx6kcc8uij"]
 
 [ext_resource type="Texture2D" uid="uid://d2ok2paup1kah" path="res://Assets/sprites/slime_green.png" id="1_pujb0"]
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_s5k3w"]
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="2_f66r7"]
+[ext_resource type="PackedScene" uid="uid://do0cmes27mv6g" path="res://Scenes/health_component.tscn" id="4_v07w8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4orq"]
 atlas = ExtResource("1_pujb0")
@@ -43,8 +44,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt46y"]
 size = Vector2(7, 9)
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="Node2D" node_paths=PackedStringArray("health_component")]
 script = ExtResource("1_s5k3w")
+health_component = NodePath("HealthComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -65,3 +67,9 @@ target_position = Vector2(8, 0)
 [node name="RayCast2DLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
 target_position = Vector2(-8, 0)
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_v07w8")]
+
+[connection signal="area_shape_entered" from="Killzone" to="Killzone" method="_on_area_shape_entered"]
+[connection signal="no_longer_evil" from="HealthComponent" to="." method="_on_health_component_no_longer_evil"]
+[connection signal="no_longer_evil" from="HealthComponent" to="Killzone" method="_on_health_component_no_longer_evil"]
