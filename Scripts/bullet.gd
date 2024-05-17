@@ -17,5 +17,4 @@ func _on_area_entered(area):
 	if area is Killzone:
 		var enemy = area.get_parent()
 		if enemy is Enemy:
-			print("bulllet on enemy")
 			enemy.damage(damage)

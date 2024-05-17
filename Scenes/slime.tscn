@@ -70,6 +70,14 @@ target_position = Vector2(-8, 0)
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_v07w8")]
 
+[node name="Label" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = 2.0
+scale = Vector2(0.372967, 0.4)
+text = "Evil"
+
 [connection signal="area_shape_entered" from="Killzone" to="Killzone" method="_on_area_shape_entered"]
 [connection signal="no_longer_evil" from="HealthComponent" to="." method="_on_health_component_no_longer_evil"]
 [connection signal="no_longer_evil" from="HealthComponent" to="Killzone" method="_on_health_component_no_longer_evil"]

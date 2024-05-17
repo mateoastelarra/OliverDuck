@@ -1,6 +1,4 @@
 res://Scenes/slime.tscn
-res://HealthComponent.gd
-res://Scripts/killzone.gd
 res://Scripts/slime.gd
 res://Scenes/game.tscn
 res://Scenes/player.tscn
@@ -10,4 +8,3 @@ res://Scenes/killzone.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
-res://Scripts/bullet.gd
