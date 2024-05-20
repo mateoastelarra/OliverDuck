@@ -38,6 +38,8 @@ func _physics_process(delta):
 	
 	if !Input.is_action_pressed("dont_move"):
 		move(direction)
+		print(Input.is_action_pressed("dont_move"))
+		
 	flip_sprite(direction)
 	play_animations(direction)
 	move_and_slide()

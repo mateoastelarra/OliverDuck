@@ -18,3 +18,4 @@ func _on_area_entered(area):
 		var enemy = area.get_parent()
 		if enemy is Enemy:
 			enemy.damage(damage)
+			queue_free()
