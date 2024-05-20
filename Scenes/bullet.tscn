@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_rot6c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gprf7"]
-radius = 4.0
+radius = 3.0
 
 [node name="Bullet" type="Area2D"]
+z_index = 10
 script = ExtResource("1_rot6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

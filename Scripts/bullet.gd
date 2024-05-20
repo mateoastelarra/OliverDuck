@@ -19,3 +19,10 @@ func _on_area_entered(area):
 		if enemy is Enemy:
 			enemy.damage(damage)
 			queue_free()
+
+
+func _on_body_entered(body):
+	if body is CharacterBody2D:
+		pass
+	else:
+		queue_free()
