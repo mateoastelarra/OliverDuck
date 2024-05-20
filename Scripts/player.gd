@@ -34,11 +34,10 @@ func _physics_process(delta):
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	looking_direction = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
-	
 	move(direction)
 		
 	flip_sprite(direction)
+	update_shooting_direction()
 	play_animations(direction)
 	move_and_slide()
 
@@ -69,3 +68,18 @@ func flip_sprite(direction):
 
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
+
+
+func update_shooting_direction():
+	var current_direction : Vector2 = Input.get_vector(
+											"aim_left", 
+											"aim_right", 
+											"aim_up", 
+											"aim_down")
+	if current_direction != Vector2.ZERO:
+		looking_direction = current_direction
+	elif animated_sprite.flip_h:
+		looking_direction = Vector2(-1,0)
+	else:
+		looking_direction = Vector2(1,0)
+		

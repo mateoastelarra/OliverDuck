@@ -7,3 +7,5 @@ res://Scenes/killzone.tscn
 res://Scenes/slime.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
+res://Scripts/gun.gd
+res://Scripts/player.gd
