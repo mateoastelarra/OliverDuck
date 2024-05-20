@@ -18,7 +18,7 @@ func _init():
 	Globals.set("player", self)
 	
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		shoot()
 	
 	

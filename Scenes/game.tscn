@@ -554,3 +554,4 @@ text = "Space to Jump"
 
 [node name="Gun" parent="." instance=ExtResource("4_sdplr")]
 position = Vector2(0, 0)
+shooting_rate = 0.5
