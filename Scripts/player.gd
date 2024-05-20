@@ -36,9 +36,7 @@ func _physics_process(delta):
 	
 	looking_direction = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 	
-	if !Input.is_action_pressed("dont_move"):
-		move(direction)
-		print(Input.is_action_pressed("dont_move"))
+	move(direction)
 		
 	flip_sprite(direction)
 	play_animations(direction)
@@ -46,7 +44,7 @@ func _physics_process(delta):
 
 
 func move(direction):
-	if direction:
+	if direction and !Input.is_action_pressed("dont_move"):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
