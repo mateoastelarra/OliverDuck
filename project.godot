@@ -88,10 +88,3 @@ dont_move={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-
-[shader_globals]
-
-time={
-"type": "float",
-"value": 0.0
-}
