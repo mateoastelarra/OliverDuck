@@ -3,6 +3,7 @@ class_name Enemy
 const SPEED = 60
 
 var direction = 1
+@onready var game_manager = %GameManager
 @onready var ray_cast_right = $RayCast2DRight
 @onready var ray_cast_left = $RayCast2DLeft
 @onready var animated_sprite = $AnimatedSprite2D
@@ -32,3 +33,4 @@ func damage(damage: int):
 
 func _on_health_component_no_longer_evil():
 	evil_label.text = "good"
+	game_manager.add_converted_animal()
