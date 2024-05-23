@@ -221,3 +221,7 @@ shape = SubResource("CircleShape2D_gjj46")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(0, -13)
+
+[node name="GlidingTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="GlidingTimer" to="." method="_on_gliding_timer_timeout"]
