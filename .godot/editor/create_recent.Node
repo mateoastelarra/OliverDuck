@@ -1,3 +1,5 @@
+ColorRect
+CanvasLayer
 Timer
 Label
 CollisionShape2D
@@ -11,4 +13,3 @@ AudioStreamPlayer2D
 Node
 RayCast2D
 AnimatedSprite2D
-AnimatableBody2D

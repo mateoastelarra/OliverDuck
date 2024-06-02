@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=18 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="5_dj7mj"]
 [ext_resource type="PackedScene" uid="uid://4hxx6kcc8uij" path="res://Scenes/slime.tscn" id="6_h67em"]
 [ext_resource type="FontFile" uid="uid://c2kfs7ehcrn4u" path="res://Assets/fonts/PixelOperator8.ttf" id="7_yuh8e"]
+[ext_resource type="Shader" path="res://Shaders/screen.gdshader" id="10_dwg7r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nb7ly"]
 texture = ExtResource("2_3b8na")
@@ -454,6 +455,9 @@ _data = {
 "RESET": SubResource("Animation_tye38")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fj8b"]
+shader = ExtResource("10_dwg7r")
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -557,3 +561,17 @@ text = "Space to Jump"
 [node name="Gun" parent="." instance=ExtResource("4_sdplr")]
 position = Vector2(0, 0)
 shooting_rate = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_5fj8b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -331.0
+offset_top = -271.0
+offset_right = 364.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
