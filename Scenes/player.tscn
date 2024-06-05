@@ -1,9 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=34 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
 [ext_resource type="Script" path="res://Scripts/State Machine/state_machine.gd" id="3_cjwcm"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_idle.gd" id="4_epq36"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_running.gd" id="5_cwntl"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_jump.gd" id="6_we7w7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -214,7 +216,7 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"Die"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -226,10 +228,17 @@ position = Vector2(0, -13)
 
 [node name="GlidingTimer" type="Timer" parent="."]
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_cjwcm")
+initial_state = NodePath("PlayerIdle")
 
 [node name="PlayerIdle" type="Node" parent="StateMachine"]
 script = ExtResource("4_epq36")
+
+[node name="PlayerRunning" type="Node" parent="StateMachine"]
+script = ExtResource("5_cwntl")
+
+[node name="PlayerJump" type="Node" parent="StateMachine"]
+script = ExtResource("6_we7w7")
 
 [connection signal="timeout" from="GlidingTimer" to="." method="_on_gliding_timer_timeout"]

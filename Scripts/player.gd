@@ -49,7 +49,7 @@ func _physics_process(delta):
 	manage_glide()
 	flip_sprite(direction)
 	update_shooting_direction()
-	play_animations(direction)
+	#play_animations(direction)
 	move_and_slide()
 
 

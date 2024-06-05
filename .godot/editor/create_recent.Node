@@ -1,3 +1,6 @@
+PlayerJump
+PlayerRunning
+State
 PlayerIdle
 StateMachine
 Timer
@@ -10,6 +13,3 @@ Sprite2D
 Area2D
 AnimationPlayer
 AudioStreamPlayer2D
-Node
-RayCast2D
-AnimatedSprite2D
