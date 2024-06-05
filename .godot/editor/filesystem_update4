@@ -1,5 +1,7 @@
 res://Scenes/game.tscn
+res://Shaders/shockwave.gdshader
 res://Shaders/screen.gdshader
+res://Shaders/fog.gdshader
 res://Scenes/player.tscn
 res://Scenes/platform.tscn
 res://Scenes/Coin.tscn
@@ -8,4 +10,3 @@ res://Scenes/slime.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
-res://Shaders/fog.gdshader
