@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=35 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_idle.gd" id="4_epq36"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_running.gd" id="5_cwntl"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_jump.gd" id="6_we7w7"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_fall.gd" id="7_fjwyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -240,5 +241,8 @@ script = ExtResource("5_cwntl")
 
 [node name="PlayerJump" type="Node" parent="StateMachine"]
 script = ExtResource("6_we7w7")
+
+[node name="PlayerFall" type="Node" parent="StateMachine"]
+script = ExtResource("7_fjwyc")
 
 [connection signal="timeout" from="GlidingTimer" to="." method="_on_gliding_timer_timeout"]
