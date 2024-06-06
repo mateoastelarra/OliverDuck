@@ -1,5 +1,4 @@
-PlayerFall
-PlayerJump
+PlayerGliding
 PlayerRunning
 State
 PlayerIdle

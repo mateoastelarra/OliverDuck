@@ -15,7 +15,7 @@ func Update(_delta: float):
 	
 func Physics_Update(_delta: float):
 	if !player.is_on_floor():
-		Transitioned.emit(self, "PlayerJump")
+		Transitioned.emit(self, "PlayerJumping")
 	elif Input.get_axis("move_left", "move_right") != 0:
 		Transitioned.emit(self, "PlayerRunning")
 	else:
