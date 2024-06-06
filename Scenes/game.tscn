@@ -470,8 +470,6 @@ layer_1/tile_data = PackedInt32Array(393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 3
 
 [node name="Player" parent="." instance=ExtResource("1_xv1o1")]
 position = Vector2(107, -84)
-gliding_ratio = 50.0
-gliding_time = 0.7
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -7)
