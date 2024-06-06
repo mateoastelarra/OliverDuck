@@ -7,11 +7,8 @@ res://Scenes/slime.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
+res://Scripts/State Machine/States/Player/player_gliding.gd
+res://Scripts/player.gd
+res://Scripts/State Machine/States/Player/player_falling.gd
 res://Scripts/State Machine/States/Player/player_idle.gd
 res://Scripts/State Machine/States/Player/player_running.gd
-res://Scripts/player.gd
-res://Scripts/State Machine/States/Player/player_jump.gd
-res://Scripts/State Machine/States/Player/player_fall.gd
-res://Scripts/State Machine/States/Player/player_falling.gd
-res://Scripts/State Machine/States/Player/player_jumping.gd
-res://Scripts/State Machine/States/Player/player_gliding.gd

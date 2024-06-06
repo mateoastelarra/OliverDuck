@@ -12,11 +12,12 @@ const JUMP_VELOCITY = -300.0
 
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 var looking_direction
-var is_gliding: bool = false
+var has_glided: bool = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var muzzle = $Muzzle
-@onready var gliding_timer = $GlidingTimer
+@onready var gliding_timer = $StateMachine/PlayerGliding/GlidingTimer
+
 
 
 func _init():
@@ -35,8 +36,8 @@ func _process(delta):
 	
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		handle_gravity(delta)
+	#if not is_on_floor():
+	#	handle_gravity(delta)
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -46,7 +47,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	move(direction)
-	manage_glide()
+	#manage_glide()
 	flip_sprite(direction)
 	update_shooting_direction()
 	#play_animations(direction)
@@ -96,7 +97,7 @@ func update_shooting_direction():
 		
 
 func handle_gravity(delta):
-	if is_gliding and velocity.y > 0:
+	if has_glided and velocity.y > 0:
 		velocity.y = gliding_ratio
 	else:
 		velocity.y += gravity * delta
@@ -107,13 +108,13 @@ func manage_glide():
 		glide()
 	
 	if Input.is_action_just_released("glide") or is_on_floor():
-		is_gliding = false
+		has_glided = false
 	
 func glide():
-	if !is_gliding:
-		is_gliding = true
+	if !has_glided:
+		has_glided = true
 		gliding_timer.start()
 	
 	
 func _on_gliding_timer_timeout():
-	is_gliding = false
+	has_glided = false

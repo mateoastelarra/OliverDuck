@@ -6,7 +6,8 @@ class_name PlayerIdle
 
 func Enter():
 	animated_sprite.play("Idle")
-
+	player.has_glided = false
+	
 func Exit():
 	pass
 
