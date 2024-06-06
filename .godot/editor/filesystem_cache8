@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717599096
+::res://::1717684717
 default_bus_layout.tres::AudioBusLayout::6993253927633494661::1715363846::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1715296200::0::1::::<><>::
 HealthComponent.gd::GDScript::-1::1715891768::0::1::::HealthComponent<>Node2D<>::
@@ -26,29 +26,31 @@ platforms.png::CompressedTexture2D::6485478128961584509::1714832759::1714832773:
 slime_green.png::CompressedTexture2D::9083918293006150383::1714832759::1714832773::1::::<><>::
 slime_purple.png::CompressedTexture2D::7378111335152095886::1714832759::1714832773::1::::<><>::
 world_tileset.png::CompressedTexture2D::6211824038584379944::1714832759::1714832773::1::::<><>::
-::res://Scenes/::1717444369
-bullet.tscn::PackedScene::4106523534207288498::1717443569::0::1::::<><>::uid://bc41qe3tvl031::::res://Assets/sprites/fruit.png<>res://Scripts/bullet.gd
-Coin.tscn::PackedScene::4974244091941552202::1717443569::0::1::::<><>::res://Scripts/coin.gd<>uid://clktpfxti1wi6::::res://Assets/sprites/coin.png<>uid://bffgonj7dapqx::::res://Assets/sounds/coin.wav
-game.tscn::PackedScene::7499055649020020937::1717443569::0::1::::<><>::res://Scripts/game_manager.gd<>uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://curb3mrs2pv6o::::res://Assets/sprites/world_tileset.png<>uid://b1dmcgw3t3y0x::::res://Scenes/platform.tscn<>uid://cc4tcq52mqt75::::res://Scenes/Coin.tscn<>uid://cbubitgp263p0::::res://Scenes/gun.tscn<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://4hxx6kcc8uij::::res://Scenes/slime.tscn<>uid://c2kfs7ehcrn4u::::res://Assets/fonts/PixelOperator8.ttf
-gun.tscn::PackedScene::4884393777380778639::1717443569::0::1::::<><>::res://Scripts/gun.gd
-health_component.tscn::PackedScene::8193658408545538872::1717443569::0::1::::<><>::res://HealthComponent.gd
-killzone.tscn::PackedScene::2803655738019436022::1717443569::0::1::::<><>::res://Scripts/killzone.gd
+::res://Scenes/::1717684710
+bullet.tscn::PackedScene::4106523534207288498::1717607876::0::1::::<><>::uid://bc41qe3tvl031::::res://Assets/sprites/fruit.png<>res://Scripts/bullet.gd
+Coin.tscn::PackedScene::4974244091941552202::1717607876::0::1::::<><>::res://Scripts/coin.gd<>uid://clktpfxti1wi6::::res://Assets/sprites/coin.png<>uid://bffgonj7dapqx::::res://Assets/sounds/coin.wav
+game.tscn::PackedScene::7499055649020020937::1717607876::0::1::::<><>::res://Scripts/game_manager.gd<>uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://curb3mrs2pv6o::::res://Assets/sprites/world_tileset.png<>uid://b1dmcgw3t3y0x::::res://Scenes/platform.tscn<>uid://cc4tcq52mqt75::::res://Scenes/Coin.tscn<>uid://cbubitgp263p0::::res://Scenes/gun.tscn<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://4hxx6kcc8uij::::res://Scenes/slime.tscn<>uid://c2kfs7ehcrn4u::::res://Assets/fonts/PixelOperator8.ttf
+gun.tscn::PackedScene::4884393777380778639::1717607876::0::1::::<><>::res://Scripts/gun.gd
+health_component.tscn::PackedScene::8193658408545538872::1717607876::0::1::::<><>::res://HealthComponent.gd
+killzone.tscn::PackedScene::2803655738019436022::1717607876::0::1::::<><>::res://Scripts/killzone.gd
 music.tscn::PackedScene::1086303053981222150::1715292544::0::1::::<><>::uid://c70ef4xiultgu::::res://Assets/music/time_for_adventure.mp3
-platform.tscn::PackedScene::4218256277469639129::1717443569::0::1::::<><>::uid://cynu43dgpjyoj::::res://Assets/sprites/platforms.png
-player.tscn::PackedScene::4745073606248845235::1717444369::0::1::::<><>::uid://ceh0frm8f1o42::::res://Assets/sprites/knight.png<>res://Scripts/player.gd<>res://Scripts/State Machine/state_machine.gd<>res://Scripts/State Machine/States/Player/player_idle.gd
-slime.tscn::PackedScene::2051366317641561425::1717443569::0::1::::<><>::uid://d2ok2paup1kah::::res://Assets/sprites/slime_green.png<>res://Scripts/slime.gd<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://do0cmes27mv6g::::res://Scenes/health_component.tscn
-::res://Scripts/::1717443627
+platform.tscn::PackedScene::4218256277469639129::1717607876::0::1::::<><>::uid://cynu43dgpjyoj::::res://Assets/sprites/platforms.png
+player.tscn::PackedScene::4745073606248845235::1717684710::0::1::::<><>::uid://ceh0frm8f1o42::::res://Assets/sprites/knight.png<>res://Scripts/player.gd<>res://Scripts/State Machine/state_machine.gd<>res://Scripts/State Machine/States/Player/player_idle.gd<>res://Scripts/State Machine/States/Player/player_running.gd<>res://Scripts/State Machine/States/Player/player_jump.gd
+slime.tscn::PackedScene::2051366317641561425::1717607876::0::1::::<><>::uid://d2ok2paup1kah::::res://Assets/sprites/slime_green.png<>res://Scripts/slime.gd<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://do0cmes27mv6g::::res://Scenes/health_component.tscn
+::res://Scripts/::1717684710
 bullet.gd::GDScript::-1::1716232916::0::1::::<>Area2D<>::
 coin.gd::GDScript::-1::1715349263::0::1::::<>Area2D<>::
 game_manager.gd::GDScript::-1::1716496601::0::1::::<>Node<>::
 Globals.gd::GDScript::-1::1715355108::0::1::::<>Node<>::
 gun.gd::GDScript::-1::1716235431::0::1::::<>Node2D<>::
 killzone.gd::GDScript::-1::1716495397::0::1::::Killzone<>Area2D<>::
-player.gd::GDScript::-1::1716495321::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1717684710::0::1::::<>CharacterBody2D<>::
 slime.gd::GDScript::-1::1716496550::0::1::::Enemy<>Node2D<>::
-::res://Scripts/State Machine/::1717444330
-state.gd::GDScript::-1::1717443465::0::1::::State<>Node<>::
-state_machine.gd::GDScript::-1::1717444330::0::1::::StateMachine<>Node<>::
-::res://Scripts/State Machine/States/::1717443610
-::res://Scripts/State Machine/States/Player/::1717444369
-player_idle.gd::GDScript::-1::1717444369::0::1::::PlayerIdle<>State<>::
+::res://Scripts/State Machine/::1717684710
+state.gd::GDScript::-1::1717684710::0::1::::State<>Node<>::
+state_machine.gd::GDScript::-1::1717684710::0::1::::StateMachine<>Node<>::
+::res://Scripts/State Machine/States/::1717684710
+::res://Scripts/State Machine/States/Player/::1717684710
+player_idle.gd::GDScript::-1::1717684710::0::1::::PlayerIdle<>State<>::
+player_jump.gd::GDScript::-1::1717684710::0::1::::PlayerJump<>State<>::
+player_running.gd::GDScript::-1::1717684710::0::1::::PlayerRunning<>State<>::
