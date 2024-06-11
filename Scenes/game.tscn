@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=23 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="5_dj7mj"]
 [ext_resource type="PackedScene" uid="uid://4hxx6kcc8uij" path="res://Scenes/slime.tscn" id="6_h67em"]
 [ext_resource type="FontFile" uid="uid://c2kfs7ehcrn4u" path="res://Assets/fonts/PixelOperator8.ttf" id="7_yuh8e"]
+[ext_resource type="Shader" path="res://Assets/Shaders/fire.gdshader" id="10_s760c"]
+[ext_resource type="Texture2D" uid="uid://coywfyoq2bytr" path="res://Assets/sprites/Black.png" id="11_i0g4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nb7ly"]
 texture = ExtResource("2_3b8na")
@@ -454,6 +456,31 @@ _data = {
 "RESET": SubResource("Animation_tye38")
 }
 
+[sub_resource type="Curve" id="Curve_hmljk"]
+_data = [Vector2(0, 0), 0.0, 2.14692, 0, 1, Vector2(0.220096, 0.472527), 0.0, 0.0, 0, 0, Vector2(0.569378, 1), 0.0, 0.0, 0, 0, Vector2(0.971292, 0.142857), -2.13265, 0.0, 1, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_4coyh"]
+curve = SubResource("Curve_hmljk")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qa0yc"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bdwoe"]
+seamless = true
+noise = SubResource("FastNoiseLite_qa0yc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_llmoi"]
+shader = ExtResource("10_s760c")
+shader_parameter/base_color = Color(1, 0.75, 0.3, 1)
+shader_parameter/edge_color = Color(1, 0.1, 0, 1)
+shader_parameter/fire_alpha = 1.0
+shader_parameter/fire_filter = 0.2
+shader_parameter/fire_power = 10.0
+shader_parameter/fire_speed = Vector2(0, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_bdwoe")
+shader_parameter/mask_texture = SubResource("CurveTexture_4coyh")
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -555,3 +582,9 @@ text = "Space to Jump"
 [node name="Gun" parent="." instance=ExtResource("4_sdplr")]
 position = Vector2(0, 0)
 shooting_rate = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_llmoi")
+position = Vector2(569, 81.4063)
+scale = Vector2(0.277344, 0.588257)
+texture = ExtResource("11_i0g4i")
