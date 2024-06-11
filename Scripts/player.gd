@@ -2,12 +2,16 @@ extends CharacterBody2D
 
 signal bullet_shot(bullet_scene, location)
 
+const MAX_SPEED = 200
+const ACCELERATION = 1000
+const FRICTION = 1200
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 
 @export var gravity: float = 980
 @export var falling_velocity_limit: float = 400
 
+var input = Vector2.ZERO
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 var looking_direction
 var has_glided: bool = false
@@ -32,12 +36,27 @@ func _physics_process(delta):
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	move(direction)
+	#move(direction)
+	player_movement(direction, delta)
 	flip_sprite(direction)
 	update_shooting_direction()
+	
+
+func get_input():
+	input = Input.get_axis("move_left", "move_right")
+
+func player_movement(direction, delta):
+	if direction == 0:
+		if abs(velocity.x) >  FRICTION * delta:
+			velocity.x -= sign(velocity.x) * FRICTION * delta
+		else:
+			velocity.x = 0
+	else:
+		velocity.x += direction * ACCELERATION * delta
+		velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
+	print(velocity.x)
 	move_and_slide()
-
-
+	
 func move(direction):
 	if direction and !Input.is_action_pressed("dont_move"):
 		velocity.x = direction * SPEED

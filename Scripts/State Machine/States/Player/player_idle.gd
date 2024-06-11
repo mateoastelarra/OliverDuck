@@ -19,6 +19,6 @@ func Physics_Update(_delta: float):
 		Transitioned.emit(self, "PlayerJumping")
 	elif Input.get_axis("move_left", "move_right") != 0:
 		Transitioned.emit(self, "PlayerRunning")
-	else:
-		player.velocity = Vector2(0,0)
+	#else:
+	#	player.velocity = Vector2(0,0)
 	
