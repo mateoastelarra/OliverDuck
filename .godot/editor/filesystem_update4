@@ -10,3 +10,4 @@ res://Scenes/health_component.tscn
 res://Scripts/player.gd
 res://Scripts/State Machine/States/Player/player_running.gd
 res://Scripts/State Machine/States/Player/player_jumping.gd
+res://Scripts/State Machine/States/Player/player_falling.gd

@@ -2,12 +2,22 @@ extends CharacterBody2D
 
 signal bullet_shot(bullet_scene, location)
 
-@export var gravity: float = 980
-@export var falling_velocity_limit: float = 400
+# Movement
 @export var max_speed = 200
 @export var acceleration = 1000
 @export var friction = 1200
-@export var jump_velocity = -300.0
+
+# Jump
+@export var jump_height : float = 135
+@export var jump_time_to_peak : float = 0.6
+@export var jump_time_to_descend : float = 0.5
+
+
+@export var jump_velocity : float = (-2.0 * jump_height) / jump_time_to_peak
+@export var jump_gravity : float = (2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)
+@export var fall_gravity: float = (2.0 * jump_height) / (jump_time_to_descend * jump_time_to_descend)
+#@export var gravity: float = 980
+@export var falling_velocity_limit: float = 400
 
 var input = Vector2.ZERO
 var bullet_scene = preload("res://Scenes/bullet.tscn")
@@ -30,7 +40,9 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-		
+	if !is_on_floor():
+		velocity.y += get_gravity() * delta
+	
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
 	
@@ -60,6 +72,11 @@ func flip_sprite(direction):
 	elif direction < 0:
 		animated_sprite.flip_h = true
 
+func get_gravity() -> float:
+	if velocity.y < 0.0:
+		return jump_gravity
+	else:
+		return fall_gravity
 
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
