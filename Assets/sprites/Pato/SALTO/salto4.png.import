@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntrsyw2fn4go"
-path="res://.godot/imported/patopjidle1.png-f96f1ea08a086aa2587de115a3c00df1.ctex"
+uid="uid://btlyoybcptbgh"
+path="res://.godot/imported/salto4.png-55db4159fd19ed3c51b236de76bcb79a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Pato/IDLE/patopjidle1.png"
-dest_files=["res://.godot/imported/patopjidle1.png-f96f1ea08a086aa2587de115a3c00df1.ctex"]
+source_file="res://Assets/sprites/Pato/SALTO/salto4.png"
+dest_files=["res://.godot/imported/salto4.png-55db4159fd19ed3c51b236de76bcb79a.ctex"]
 
 [params]
 

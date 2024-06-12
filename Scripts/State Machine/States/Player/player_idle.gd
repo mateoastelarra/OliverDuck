@@ -5,7 +5,7 @@ class_name PlayerIdle
 @onready var player = $"../.."
 
 func Enter():
-	animated_sprite.play("Idle")
+	animated_sprite.play("Idle2")
 	player.has_glided = false
 	
 func Exit():
@@ -19,6 +19,4 @@ func Physics_Update(_delta: float):
 		Transitioned.emit(self, "PlayerJumping")
 	elif Input.get_axis("move_left", "move_right") != 0:
 		Transitioned.emit(self, "PlayerRunning")
-	#else:
-	#	player.velocity = Vector2(0,0)
 	
