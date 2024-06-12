@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Music="*res://Scenes/music.tscn"
 Globals="*res://Scripts/Globals.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 jump={

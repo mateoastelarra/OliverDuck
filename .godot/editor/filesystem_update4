@@ -7,5 +7,3 @@ res://Scenes/slime.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
-res://Scripts/player.gd
-res://Scripts/State Machine/States/Player/player_idle.gd
