@@ -1,11 +1,15 @@
-[gd_scene load_steps=36 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=40 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
 [ext_resource type="Script" path="res://Scripts/State Machine/state_machine.gd" id="3_cjwcm"]
+[ext_resource type="Texture2D" uid="uid://ntrsyw2fn4go" path="res://Assets/sprites/Pato/IDLE/patopjidle1.png" id="3_ubxft"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_idle.gd" id="4_epq36"]
+[ext_resource type="Texture2D" uid="uid://c3yvw86q82i8i" path="res://Assets/sprites/Pato/IDLE/patopjidle2.png" id="4_r2qy6"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_running.gd" id="5_cwntl"]
+[ext_resource type="Texture2D" uid="uid://f4jsxcueqcrq" path="res://Assets/sprites/Pato/IDLE/patopjidle3.png" id="5_f7kdt"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_jumping.gd" id="6_3b6m0"]
+[ext_resource type="Texture2D" uid="uid://da5u04dtwvg7" path="res://Assets/sprites/Pato/IDLE/patopjidle4.png" id="6_8kjh1"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_falling.gd" id="7_dma3n"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_gliding.gd" id="8_cbcnf"]
 
@@ -147,6 +151,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_ubxft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r2qy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f7kdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8kjh1")
+}],
+"loop": true,
+"name": &"Idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_87mgq")
 }],
 "loop": true,
@@ -207,8 +228,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gjj46"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntn8v"]
+radius = 4.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -216,14 +238,16 @@ collision_layer = 2
 script = ExtResource("1_g73xu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.991648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_gjj46")
+position = Vector2(0, -9)
+scale = Vector2(1.03471, 1.2)
+shape = SubResource("CapsuleShape2D_ntn8v")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(0, -13)
