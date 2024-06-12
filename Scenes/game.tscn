@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=24 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
@@ -457,11 +457,15 @@ _data = {
 }
 
 [sub_resource type="Curve" id="Curve_hmljk"]
-_data = [Vector2(0, 0), 0.0, 2.14692, 0, 1, Vector2(0.220096, 0.472527), 0.0, 0.0, 0, 0, Vector2(0.569378, 1), 0.0, 0.0, 0, 0, Vector2(0.971292, 0.142857), -2.13265, 0.0, 1, 0]
-point_count = 4
+_data = [Vector2(0.110048, 0.131868), 0.0, 2.15999, 0, 1, Vector2(0.511962, 1), 0.0, 0.0, 0, 0, Vector2(0.880383, 0.395604), -1.6405, 0.0, 1, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_4coyh"]
 curve = SubResource("Curve_hmljk")
+
+[sub_resource type="Gradient" id="Gradient_wtxn2"]
+offsets = PackedFloat32Array(0.0828729, 0.276243, 0.342541, 0.552486, 0.756906)
+colors = PackedColorArray(0.687215, 0.687215, 0.687215, 1, 0, 0, 0, 1, 0.973535, 0.973535, 0.973535, 1, 0.270159, 0.270159, 0.270159, 1, 0.470076, 0.470076, 0.470076, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qa0yc"]
 noise_type = 2
@@ -477,15 +481,16 @@ domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bdwoe"]
 seamless = true
+color_ramp = SubResource("Gradient_wtxn2")
 noise = SubResource("FastNoiseLite_qa0yc")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_llmoi"]
 shader = ExtResource("10_s760c")
-shader_parameter/base_color = Color(0.447059, 0.905882, 0.690196, 1)
-shader_parameter/edge_color = Color(0, 0, 0.564706, 1)
-shader_parameter/fire_alpha = 0.941
-shader_parameter/fire_filter = 0.302
-shader_parameter/fire_power = 18.212
+shader_parameter/base_color = Color(0.929412, 0.556863, 0.866667, 1)
+shader_parameter/edge_color = Color(0.54902, 0.4, 0.105882, 1)
+shader_parameter/fire_alpha = 1.0
+shader_parameter/fire_filter = 0.378
+shader_parameter/fire_power = 17.407
 shader_parameter/fire_speed = Vector2(0, 1)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_bdwoe")
 shader_parameter/mask_texture = SubResource("CurveTexture_4coyh")
