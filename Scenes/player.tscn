@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=47 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -12,15 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bped4suwp3ssp" path="res://Assets/sprites/Pato/IDLE/Idle4.png" id="6_ewu0y"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_falling.gd" id="7_dma3n"]
 [ext_resource type="Texture2D" uid="uid://b1xic2qahatog" path="res://Assets/sprites/Pato/Caminar/caminar1.png" id="7_fvkwy"]
-[ext_resource type="Texture2D" uid="uid://bvkpq6wncknce" path="res://Assets/sprites/Pato/SALTO/salto1.png" id="7_jx1vw"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_gliding.gd" id="8_cbcnf"]
-[ext_resource type="Texture2D" uid="uid://b8ujwvblh1064" path="res://Assets/sprites/Pato/SALTO/salto2.png" id="8_k62d3"]
+[ext_resource type="Texture2D" uid="uid://cdx4n7fc8y5d1" path="res://Assets/sprites/Pato/SALTO/salto5.png" id="8_pmo62"]
 [ext_resource type="Texture2D" uid="uid://b8tnq6xrumfq6" path="res://Assets/sprites/Pato/Caminar/caminar2.png" id="8_xy0tu"]
 [ext_resource type="Texture2D" uid="uid://cu27743tduqvg" path="res://Assets/sprites/Pato/SALTO/salto3.png" id="9_dc2x1"]
 [ext_resource type="Texture2D" uid="uid://dmpig4s7xnwij" path="res://Assets/sprites/Pato/Caminar/caminar3.png" id="9_xsqtl"]
 [ext_resource type="Texture2D" uid="uid://bxbqrrjc0hm" path="res://Assets/sprites/Pato/Caminar/caminar4.png" id="10_ds4nk"]
 [ext_resource type="Texture2D" uid="uid://btlyoybcptbgh" path="res://Assets/sprites/Pato/SALTO/salto4.png" id="10_mnlap"]
-[ext_resource type="Texture2D" uid="uid://cdx4n7fc8y5d1" path="res://Assets/sprites/Pato/SALTO/salto5.png" id="11_em5oh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -143,6 +141,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_mnlap")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fj22j")
 }, {
 "duration": 1.0,
@@ -185,23 +191,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_jx1vw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_k62d3")
+"texture": ExtResource("8_pmo62")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_dc2x1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_mnlap")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_em5oh")
 }],
 "loop": true,
-"name": &"Jump2",
-"speed": 5.0
+"name": &"JumpP",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,12 +271,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntn8v"]
-radius = 4.0
-height = 14.0
+radius = 3.40876
+height = 14.5108
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -286,9 +286,9 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"Jump"
+animation = &"JumpP"
 autoplay = "Idle"
-frame_progress = 0.725803
+frame_progress = 0.103996
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)

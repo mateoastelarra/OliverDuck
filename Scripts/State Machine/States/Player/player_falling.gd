@@ -5,7 +5,7 @@ class_name PlayerFalling
 @onready var animated_sprite = $"../../AnimatedSprite2D"
 
 func Enter():
-	animated_sprite.play("Jump2")
+	animated_sprite.play("Fall")
 
 func Exit():
 	pass

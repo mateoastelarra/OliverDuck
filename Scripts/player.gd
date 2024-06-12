@@ -31,12 +31,12 @@ func _process(delta):
 func _physics_process(delta):	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY	
+		velocity.y = JUMP_VELOCITY
+		animated_sprite.play("JumpP")
 		
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	#move(direction)
 	player_movement(direction, delta)
 	flip_sprite(direction)
 	update_shooting_direction()
@@ -54,14 +54,7 @@ func player_movement(direction, delta):
 	else:
 		velocity.x += direction * ACCELERATION * delta
 		velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
-	print(velocity.x)
 	move_and_slide()
-	
-func move(direction):
-	if direction and !Input.is_action_pressed("dont_move"):
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 
 func flip_sprite(direction):
