@@ -1,9 +1,9 @@
+Timer
 PlayerGliding
 PlayerRunning
 State
 PlayerIdle
 StateMachine
-Timer
 Label
 CollisionShape2D
 Node2D
