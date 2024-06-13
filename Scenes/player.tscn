@@ -296,7 +296,11 @@ shape = SubResource("CapsuleShape2D_ntn8v")
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(0, -13)
 
-[node name="JumpBufferTimer" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="JumpBufferTimer" type="Timer" parent="Timers"]
+
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_cjwcm")
@@ -319,6 +323,7 @@ script = ExtResource("8_cbcnf")
 
 [node name="GlidingTimer" type="Timer" parent="StateMachine/PlayerGliding"]
 
-[connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
+[connection signal="timeout" from="Timers/JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
+[connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="StateMachine/PlayerGliding/GlidingTimer" to="." method="_on_gliding_timer_timeout"]
 [connection signal="timeout" from="StateMachine/PlayerGliding/GlidingTimer" to="StateMachine/PlayerGliding" method="_on_gliding_timer_timeout"]

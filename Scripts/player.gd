@@ -13,20 +13,23 @@ signal bullet_shot(bullet_scene, location)
 @export var jump_time_to_descend : float = 0.5
 @export var jump_velocity : float = (-2.0 * jump_height) / jump_time_to_peak
 @export var jump_gravity : float = (2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)
-@export var fall_gravity: float = (2.0 * jump_height) / (jump_time_to_descend * jump_time_to_descend)
+@export var fall_gravity : float = (2.0 * jump_height) / (jump_time_to_descend * jump_time_to_descend)
 #@export var gravity: float = 980
 @export var falling_velocity_limit: float = 400
-@export var jump_buffer_time: float = .1
+@export var jump_buffer_time : float = .1
+@export var coyote_time : float = .1
 
 var input = Vector2.ZERO
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 var looking_direction
-var has_glided: bool = false
+var has_glided : bool = false
+var jump_available : bool = true
 var jump_buffer : bool = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var muzzle = $Muzzle
-@onready var jump_buffer_timer = $JumpBufferTimer
+@onready var jump_buffer_timer = $Timers/JumpBufferTimer
+@onready var coyote_timer = $Timers/CoyoteTimer
 
 func _init():
 	Globals.set("player", self)
@@ -34,6 +37,7 @@ func _init():
 func _ready():
 	jump_buffer_timer.wait_time = jump_buffer_time
 	jump_buffer_timer.one_shot = true	
+	coyote_timer.wait_time = coyote_time
 		
 func _process(delta):
 	if Input.is_action_pressed("shoot"):
@@ -43,16 +47,23 @@ func _process(delta):
 func _physics_process(delta):	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if jump_available:
 			jump()
 		else:
 			jump_buffer = true
 			jump_buffer_timer.start()
 		
-	if !is_on_floor():
+	if not is_on_floor():
+		if jump_available:
+			if coyote_timer.is_stopped():
+				coyote_timer.start()
 		velocity.y += get_gravity() * delta
-	elif jump_buffer:
-		jump()
+	else:
+		jump_available = true
+		coyote_timer.stop()
+		if jump_buffer:
+			jump()
+			jump_buffer = false
 		
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
@@ -91,6 +102,7 @@ func get_gravity() -> float:
 
 func jump() -> void:
 	velocity.y = jump_velocity
+	jump_available = false
 	
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
@@ -112,3 +124,7 @@ func update_shooting_direction():
 
 func _on_jump_buffer_timer_timeout():
 	jump_buffer = false
+
+
+func _on_coyote_timer_timeout():
+	jump_available = false
