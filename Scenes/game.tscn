@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=18 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="5_dj7mj"]
 [ext_resource type="PackedScene" uid="uid://4hxx6kcc8uij" path="res://Scenes/slime.tscn" id="6_h67em"]
 [ext_resource type="FontFile" uid="uid://c2kfs7ehcrn4u" path="res://Assets/fonts/PixelOperator8.ttf" id="7_yuh8e"]
+[ext_resource type="Shader" path="res://Assets/Shaders/lightning.gdshader" id="10_bukf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nb7ly"]
 texture = ExtResource("2_3b8na")
@@ -454,6 +455,14 @@ _data = {
 "RESET": SubResource("Animation_tye38")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eukul"]
+shader = ExtResource("10_bukf5")
+shader_parameter/effect_color = Color(0.2, 0.3, 0.8, 1)
+shader_parameter/octaves_count = 1
+shader_parameter/amp_start = 0.5
+shader_parameter/amp_coeff = 0.5
+shader_parameter/freq_coeff = 2.0
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -555,3 +564,10 @@ text = "Space to Jump"
 [node name="Gun" parent="." instance=ExtResource("4_sdplr")]
 position = Vector2(0, 0)
 shooting_rate = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_eukul")
+offset_left = 155.0
+offset_top = 36.0
+offset_right = 354.0
+offset_bottom = 207.0
