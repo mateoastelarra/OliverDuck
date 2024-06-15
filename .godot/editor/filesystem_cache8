@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1718321949
+::res://::1718484836
 default_bus_layout.tres::AudioBusLayout::6993253927633494661::1718154823::0::1::::<><>::
 HealthComponent.gd::GDScript::-1::1718154823::0::1::::HealthComponent<>Node2D<>::
 icon.svg::CompressedTexture2D::5579280385701293324::1718154823::1718154823::1::::<><>::
@@ -10,8 +10,8 @@ PixelOperator8-Bold.ttf::FontFile::7985643864708409812::1718154823::1718154823::
 PixelOperator8.ttf::FontFile::6688921339655621802::1718154823::1718154823::1::::<><>::
 ::res://Assets/music/::1718154823
 time_for_adventure.mp3::AudioStreamMP3::7070747163693643524::1718154823::1718154823::1::::<><>::
-::res://Assets/Shaders/::1718321869
-lightning.gdshader::Shader::-1::1718321869::0::1::::<><>::
+::res://Assets/Shaders/::1718322093
+lightning.gdshader::Shader::-1::1718322093::0::1::::<><>::
 ::res://Assets/sounds/::1718154823
 coin.wav::AudioStreamWAV::2748076791889581283::1718154823::1718154823::1::::<><>::
 explosion.wav::AudioStreamWAV::4449862048627969678::1718154823::1718154823::1::::<><>::

@@ -458,10 +458,11 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eukul"]
 shader = ExtResource("10_bukf5")
 shader_parameter/effect_color = Color(0.2, 0.3, 0.8, 1)
-shader_parameter/octaves_count = 1
+shader_parameter/octaves_count = 10
 shader_parameter/amp_start = 0.5
-shader_parameter/amp_coeff = 0.5
+shader_parameter/amp_coeff = 0.45
 shader_parameter/freq_coeff = 2.0
+shader_parameter/speed = 0.31
 
 [node name="Game" type="Node2D"]
 
@@ -567,7 +568,7 @@ shooting_rate = 0.5
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_eukul")
-offset_left = 155.0
-offset_top = 36.0
-offset_right = 354.0
-offset_bottom = 207.0
+offset_left = -6.0
+offset_top = -272.0
+offset_right = 214.0
+offset_bottom = -8.0
