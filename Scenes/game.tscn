@@ -462,7 +462,7 @@ shader_parameter/octaves_count = 10
 shader_parameter/amp_start = 0.5
 shader_parameter/amp_coeff = 0.45
 shader_parameter/freq_coeff = 2.0
-shader_parameter/speed = 0.31
+shader_parameter/speed = 0.065
 
 [node name="Game" type="Node2D"]
 
