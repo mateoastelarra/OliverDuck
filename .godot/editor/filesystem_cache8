@@ -1,0 +1,18 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1719023958
+icon.svg::CompressedTexture2D::6400933253027490371::1719014546::1719023187::1::::<><>::
+outline.gdshader::Shader::-1::1719022436::0::1::::<><>::
+Pixelate3D.tscn::PackedScene::8747899048655396595::1719023958::0::1::::<><>::uid://bsqq63e87vs4d::::res://Assets/icosphere.glb<>res://outline.gdshader<>uid://cyasdvqjf3m3e::::res://Assets/mono.glb<>uid://blpa5ip6r5xdi::::res://Assets/gatitocute.glb<>uid://o3cycbpe3a4t::::res://Assets/SILLA,glb.glb<>uid://c47t1ww6iywq4::::res://Assets/SILLA2glb.glb
+::res://Assets/::1719024001
+gatitocute.glb::PackedScene::3189517648630789866::1719021949::1719023217::1::::<><>::uid://cmdamgplumf62::::res://Assets/gatitocute_Fabric-Cotton_diffuse.png<>uid://b07mdti0ii5e8::::res://Assets/gatitocute_Fabric-Cotton_roughness.png<>uid://dqx8d4spnx5wn::::res://Assets/gatitocute_Fabric-Cotton_normal.png<>uid://cudjhvhoq0xox::::res://Assets/gatitocute_cinturon.png<>uid://uktaf5lqcawf::::res://Assets/gatitocute_Fabric-Leather-Damaged_Roughness.png<>uid://dvt0p2elw8dn5::::res://Assets/gatitocute_Fabric-Leather-Damaged_Normal.png
+gatitocute_cinturon.png::CompressedTexture2D::6183371441363732503::1719021962::1719023187::1::::<><>::
+gatitocute_Fabric-Cotton_diffuse.png::CompressedTexture2D::5621322392670790797::1719021954::1719023187::1::::<><>::
+gatitocute_Fabric-Cotton_normal.png::CompressedTexture2D::8331774807457680985::1719021950::1719023188::1::::<><>::
+gatitocute_Fabric-Cotton_roughness.png::CompressedTexture2D::4207936835517749377::1719021957::1719023187::1::::<><>::
+gatitocute_Fabric-Leather-Damaged_Normal.png::CompressedTexture2D::8673997081373015596::1719021958::1719023188::1::::<><>::
+gatitocute_Fabric-Leather-Damaged_Roughness.png::CompressedTexture2D::1425574582645941857::1719021963::1719023188::1::::<><>::
+icosphere.glb::PackedScene::3683878223113956205::1719015054::1719023217::1::::<><>::
+mono.glb::PackedScene::6458473006074429884::1719021612::1719023218::1::::<><>::
+SILLA2glb (1).glb::PackedScene::8373605404539613109::1719024001::1719024032::1::::<><>::
+SILLA2glb.glb::PackedScene::6875579165442702645::1719023919::1719023927::1::::<><>::
+SILLA,glb.glb::PackedScene::1040610788364860461::1719023771::1719023779::1::::<><>::

@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwvsvb35qahp0"]
+[gd_scene load_steps=10 format=3 uid="uid://dwvsvb35qahp0"]
 
 [ext_resource type="PackedScene" uid="uid://bsqq63e87vs4d" path="res://Assets/icosphere.glb" id="1_dmah4"]
 [ext_resource type="Shader" path="res://outline.gdshader" id="2_mn1ww"]
 [ext_resource type="PackedScene" uid="uid://cyasdvqjf3m3e" path="res://Assets/mono.glb" id="3_awo0g"]
 [ext_resource type="PackedScene" uid="uid://blpa5ip6r5xdi" path="res://Assets/gatitocute.glb" id="4_a38al"]
+[ext_resource type="PackedScene" uid="uid://o3cycbpe3a4t" path="res://Assets/SILLA,glb.glb" id="5_u3ers"]
+[ext_resource type="PackedScene" uid="uid://c47t1ww6iywq4" path="res://Assets/SILLA2glb.glb" id="6_sagkb"]
+[ext_resource type="PackedScene" uid="uid://drkib7upjg718" path="res://Assets/SILLA2glb (1).glb" id="7_umrdr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_onmmc"]
 render_priority = 0
@@ -29,11 +32,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 3
+stretch_shrink = 5
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(384, 216)
+size = Vector2i(230, 129)
 render_target_update_mode = 4
 
 [node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport"]
@@ -54,7 +57,16 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96904, 4.33172, 12.3048)
 
 [node name="mono" parent="." instance=ExtResource("3_awo0g")]
-transform = Transform3D(-0.968392, 0, 0.249434, 0, 1, 0, -0.249434, 0, -0.968392, -0.342224, -1.40689, -0.210903)
+transform = Transform3D(0.0461123, 0, -0.998936, 0, 1, 0, 0.998936, 0, 0.0461123, -1.29289, -1.1424, -0.187103)
 
 [node name="gatitocute" parent="." instance=ExtResource("4_a38al")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9952, -0.536752, -3.41241)
+
+[node name="SILLA,glb" parent="." instance=ExtResource("5_u3ers")]
+transform = Transform3D(-0.0565487, 0, -0.191839, 0, 0.2, 0, 0.191839, 0, -0.0565487, -0.100673, -0.761226, 2.22537)
+
+[node name="SILLA2glb" parent="." instance=ExtResource("6_sagkb")]
+transform = Transform3D(-0.073219, 0, -0.186115, 0, 0.2, 0, 0.186115, 0, -0.073219, 0.685701, -0.76256, 2.41372)
+
+[node name="SILLA2glb (1)" parent="." instance=ExtResource("7_umrdr")]
+transform = Transform3D(-0.0142507, 0, -0.199492, 0, 0.2, 0, 0.199492, 0, -0.0142507, 0.320656, 0, 2.30545)
