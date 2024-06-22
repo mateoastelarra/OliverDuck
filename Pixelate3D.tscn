@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwvsvb35qahp0"]
+
+[ext_resource type="PackedScene" uid="uid://bsqq63e87vs4d" path="res://Assets/icosphere.glb" id="1_dmah4"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="2_mn1ww"]
+[ext_resource type="PackedScene" uid="uid://cyasdvqjf3m3e" path="res://Assets/mono.glb" id="3_awo0g"]
+[ext_resource type="PackedScene" uid="uid://blpa5ip6r5xdi" path="res://Assets/gatitocute.glb" id="4_a38al"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onmmc"]
+render_priority = 0
+shader = ExtResource("2_mn1ww")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3h0d7"]
+material = SubResource("ShaderMaterial_onmmc")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Main" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="icosphere" parent="SubViewportContainer/SubViewport/Level" instance=ExtResource("1_dmah4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91874, 2.29908, 0)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.89303)
+
+[node name="PostProcessing" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.89303)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_3h0d7")
+skeleton = NodePath("../../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96904, 4.33172, 12.3048)
+
+[node name="mono" parent="." instance=ExtResource("3_awo0g")]
+transform = Transform3D(-0.968392, 0, 0.249434, 0, 1, 0, -0.249434, 0, -0.968392, -0.342224, -1.40689, -0.210903)
+
+[node name="gatitocute" parent="." instance=ExtResource("4_a38al")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9952, -0.536752, -3.41241)
