@@ -271,9 +271,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntn8v"]
-radius = 3.40876
-height = 14.5108
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3y3g"]
+size = Vector2(4.091, 13)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -289,9 +288,9 @@ frame = 1
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(1.49012e-07, -11)
 scale = Vector2(1.46681, 1.65394)
-shape = SubResource("CapsuleShape2D_ntn8v")
+shape = SubResource("RectangleShape2D_d3y3g")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(0, -13)
