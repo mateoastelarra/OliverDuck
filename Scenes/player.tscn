@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=48 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dmpig4s7xnwij" path="res://Assets/sprites/Pato/Caminar/caminar3.png" id="9_xsqtl"]
 [ext_resource type="Texture2D" uid="uid://bxbqrrjc0hm" path="res://Assets/sprites/Pato/Caminar/caminar4.png" id="10_ds4nk"]
 [ext_resource type="Texture2D" uid="uid://btlyoybcptbgh" path="res://Assets/sprites/Pato/SALTO/salto4.png" id="10_mnlap"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_dead.gd" id="20_rto33"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -138,6 +139,11 @@ animations = [{
 "loop": true,
 "name": &"Die",
 "speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"DieP",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -282,10 +288,8 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"JumpP"
+animation = &"DieP"
 autoplay = "Idle"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.49012e-07, -11)
@@ -321,6 +325,9 @@ script = ExtResource("7_dma3n")
 script = ExtResource("8_cbcnf")
 
 [node name="GlidingTimer" type="Timer" parent="StateMachine/PlayerGliding"]
+
+[node name="PlayerDead" type="Node" parent="StateMachine"]
+script = ExtResource("20_rto33")
 
 [connection signal="timeout" from="Timers/JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
