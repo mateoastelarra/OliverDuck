@@ -8,7 +8,7 @@ signal bullet_shot(bullet_scene, location)
 @export var friction = 1200
 
 # Jump
-@export var jump_height : float = 135
+@export var jump_height : float = 125
 @export var jump_time_to_peak : float = 0.6
 @export var jump_time_to_descend : float = 0.5
 @export var jump_velocity : float = (-2.0 * jump_height) / jump_time_to_peak

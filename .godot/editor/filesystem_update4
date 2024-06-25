@@ -10,3 +10,5 @@ res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
 res://Scripts/State Machine/States/Player/player_falling.gd
+res://Scripts/player.gd
+res://Scripts/State Machine/States/Player/player_gliding.gd

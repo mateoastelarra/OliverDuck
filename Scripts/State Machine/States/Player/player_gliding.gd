@@ -6,7 +6,7 @@ class_name PlayerGliding
 @onready var gliding_timer = $GlidingTimer
 
 @export var gliding_ratio: float = 40
-@export var gliding_time: float = 1
+@export var gliding_time: float = .8
 
 func Enter():
 	animated_sprite.play("Fall")
