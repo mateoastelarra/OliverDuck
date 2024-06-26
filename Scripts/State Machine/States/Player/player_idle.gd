@@ -19,4 +19,6 @@ func Physics_Update(_delta: float):
 		Transitioned.emit(self, "PlayerJumping")
 	elif Input.get_axis("move_left", "move_right") != 0:
 		Transitioned.emit(self, "PlayerRunning")
+	elif Input.is_action_just_pressed("kiss"):
+		Transitioned.emit(self, "PlayerKiss")
 	

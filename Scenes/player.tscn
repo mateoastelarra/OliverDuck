@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=69 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -29,11 +29,18 @@
 [ext_resource type="Texture2D" uid="uid://clyqv34nskyr8" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto2.png" id="15_kvgus"]
 [ext_resource type="Texture2D" uid="uid://cw1kh0t66k31e" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto3.png" id="16_m67bx"]
 [ext_resource type="Texture2D" uid="uid://c2ai3lus65tn2" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto4.png" id="17_bh6od"]
+[ext_resource type="Texture2D" uid="uid://c6o8n2mr24e3m" path="res://Assets/sprites/Pato/Beso/patopjbso1.png" id="20_3iocl"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_dead.gd" id="20_rto33"]
+[ext_resource type="Texture2D" uid="uid://6lg2oiw4othl" path="res://Assets/sprites/Pato/Beso/patopjbso2.png" id="21_jht5r"]
 [ext_resource type="Texture2D" uid="uid://l3cdyucvqha8" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar1.png" id="22_1orye"]
+[ext_resource type="Texture2D" uid="uid://uusb3017hjc5" path="res://Assets/sprites/Pato/Beso/patopjbso3.png" id="22_5aufw"]
+[ext_resource type="Texture2D" uid="uid://bkg46ge2up51i" path="res://Assets/sprites/Pato/Beso/patopjbso4.png" id="23_e10lr"]
 [ext_resource type="Texture2D" uid="uid://y6ua27fekj8p" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar2.png" id="23_xhcxb"]
+[ext_resource type="Texture2D" uid="uid://b2g1seslh7hj3" path="res://Assets/sprites/Pato/Beso/patopjbso5.png" id="24_b84id"]
 [ext_resource type="Texture2D" uid="uid://dsu8rh7if0b78" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar3.png" id="24_i7akm"]
 [ext_resource type="Texture2D" uid="uid://cqly8htnj0t4" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar4.png" id="25_ak4vh"]
+[ext_resource type="Texture2D" uid="uid://be8jh30yk1fgw" path="res://Assets/sprites/Pato/Beso/patopjbso6.png" id="25_se71y"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_kiss.gd" id="41_3yph4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -275,6 +282,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_3iocl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jht5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5aufw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_e10lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b84id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_se71y")
+}],
+"loop": false,
+"name": &"Kiss",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jyj26")
 }, {
 "duration": 1.0,
@@ -372,8 +402,10 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"FallSC"
+animation = &"Kiss"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.49012e-07, -11)
@@ -413,6 +445,10 @@ script = ExtResource("8_cbcnf")
 [node name="PlayerDead" type="Node" parent="StateMachine"]
 script = ExtResource("20_rto33")
 
+[node name="PlayerKiss" type="Node" parent="StateMachine"]
+script = ExtResource("41_3yph4")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerKiss" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="StateMachine/PlayerGliding/GlidingTimer" to="." method="_on_gliding_timer_timeout"]

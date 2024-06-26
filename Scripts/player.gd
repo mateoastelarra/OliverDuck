@@ -25,6 +25,7 @@ var looking_direction
 var has_glided : bool = false
 var jump_available : bool = true
 var jump_buffer : bool = false
+var kiss_finished : bool = true
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var muzzle = $Muzzle
@@ -40,11 +41,14 @@ func _ready():
 	coyote_timer.wait_time = coyote_time
 		
 func _process(delta):
-	if Input.is_action_pressed("shoot"):
-		shoot()
+	pass
 	
 	
 func _physics_process(delta):	
+	# don´t move if kissing
+	if !kiss_finished:
+		return
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if jump_available:
