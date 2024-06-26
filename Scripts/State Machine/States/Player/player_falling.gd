@@ -6,7 +6,7 @@ class_name PlayerFalling
 @onready var collision_shape_2d = $"../../CollisionShape2D"
 
 func Enter():
-	animated_sprite.play("Fall")
+	animated_sprite.play("FallSC")
 
 func Exit():
 	pass

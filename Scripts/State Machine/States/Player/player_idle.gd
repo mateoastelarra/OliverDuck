@@ -5,7 +5,7 @@ class_name PlayerIdle
 @onready var player = $"../.."
 
 func Enter():
-	animated_sprite.play("Idle2")
+	animated_sprite.play("IdleSC")
 	player.has_glided = false
 	
 func Exit():

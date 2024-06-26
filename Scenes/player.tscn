@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=60 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -13,13 +13,25 @@
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_falling.gd" id="7_dma3n"]
 [ext_resource type="Texture2D" uid="uid://b1xic2qahatog" path="res://Assets/sprites/Pato/Caminar/caminar1.png" id="7_fvkwy"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_gliding.gd" id="8_cbcnf"]
+[ext_resource type="Texture2D" uid="uid://bjmam25n713ph" path="res://Assets/sprites/Pato/Idle Sin Caña/Idle1.png" id="8_oa0be"]
 [ext_resource type="Texture2D" uid="uid://cdx4n7fc8y5d1" path="res://Assets/sprites/Pato/SALTO/salto5.png" id="8_pmo62"]
 [ext_resource type="Texture2D" uid="uid://b8tnq6xrumfq6" path="res://Assets/sprites/Pato/Caminar/caminar2.png" id="8_xy0tu"]
 [ext_resource type="Texture2D" uid="uid://cu27743tduqvg" path="res://Assets/sprites/Pato/SALTO/salto3.png" id="9_dc2x1"]
+[ext_resource type="Texture2D" uid="uid://dkulheyckqvvd" path="res://Assets/sprites/Pato/Idle Sin Caña/Idle2.png" id="9_ud6vf"]
 [ext_resource type="Texture2D" uid="uid://dmpig4s7xnwij" path="res://Assets/sprites/Pato/Caminar/caminar3.png" id="9_xsqtl"]
 [ext_resource type="Texture2D" uid="uid://bxbqrrjc0hm" path="res://Assets/sprites/Pato/Caminar/caminar4.png" id="10_ds4nk"]
 [ext_resource type="Texture2D" uid="uid://btlyoybcptbgh" path="res://Assets/sprites/Pato/SALTO/salto4.png" id="10_mnlap"]
+[ext_resource type="Texture2D" uid="uid://dkreccuwrymml" path="res://Assets/sprites/Pato/Idle Sin Caña/Idle3.png" id="10_t835a"]
+[ext_resource type="Texture2D" uid="uid://ds2jtikmc21a6" path="res://Assets/sprites/Pato/Idle Sin Caña/Idle4.png" id="11_pssgw"]
+[ext_resource type="Texture2D" uid="uid://balj4orlp4ln0" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto1.png" id="14_jjx7b"]
+[ext_resource type="Texture2D" uid="uid://clyqv34nskyr8" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto2.png" id="15_kvgus"]
+[ext_resource type="Texture2D" uid="uid://cw1kh0t66k31e" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto3.png" id="16_m67bx"]
+[ext_resource type="Texture2D" uid="uid://c2ai3lus65tn2" path="res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto4.png" id="17_bh6od"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_dead.gd" id="20_rto33"]
+[ext_resource type="Texture2D" uid="uid://l3cdyucvqha8" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar1.png" id="22_1orye"]
+[ext_resource type="Texture2D" uid="uid://y6ua27fekj8p" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar2.png" id="23_xhcxb"]
+[ext_resource type="Texture2D" uid="uid://dsu8rh7if0b78" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar3.png" id="24_i7akm"]
+[ext_resource type="Texture2D" uid="uid://cqly8htnj0t4" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar4.png" id="25_ak4vh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -155,6 +167,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("17_bh6od")
+}],
+"loop": true,
+"name": &"FallSC",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fj22j")
 }, {
 "duration": 1.0,
@@ -189,6 +209,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_oa0be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ud6vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t835a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pssgw")
+}],
+"loop": true,
+"name": &"IdleSC",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_87mgq")
 }],
 "loop": true,
@@ -205,6 +242,23 @@ animations = [{
 "loop": false,
 "name": &"JumpP",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_jjx7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kvgus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m67bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bh6od")
+}],
+"loop": false,
+"name": &"JumpSC",
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -275,6 +329,23 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_1orye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xhcxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i7akm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ak4vh")
+}],
+"loop": true,
+"name": &"WalkSC",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3y3g"]
@@ -288,8 +359,9 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"DieP"
+animation = &"WalkSC"
 autoplay = "Idle"
+frame_progress = 0.0179925
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.49012e-07, -11)

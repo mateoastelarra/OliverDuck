@@ -9,7 +9,7 @@ class_name PlayerGliding
 @export var gliding_time: float = .8
 
 func Enter():
-	animated_sprite.play("Fall")
+	animated_sprite.play("FallSC")
 	gliding_timer.wait_time = gliding_time
 	gliding_timer.one_shot = true
 	gliding_timer.start()
