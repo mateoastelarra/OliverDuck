@@ -1,9 +1,3 @@
 res://Scenes/game.tscn
-res://Scenes/player.tscn
-res://Scenes/platform.tscn
+res://Scripts/platform_move_trigger.gd
 res://Scenes/Coin.tscn
-res://Scenes/killzone.tscn
-res://Scenes/slime.tscn
-res://Scenes/bullet.tscn
-res://Scenes/gun.tscn
-res://Scenes/health_component.tscn
