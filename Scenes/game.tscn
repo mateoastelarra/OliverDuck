@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=35 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbubitgp263p0" path="res://Scenes/gun.tscn" id="4_sdplr"]
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="5_dj7mj"]
 [ext_resource type="PackedScene" uid="uid://4hxx6kcc8uij" path="res://Scenes/slime.tscn" id="6_h67em"]
-[ext_resource type="Script" path="res://Scripts/platform_move_trigger.gd" id="7_5rxlc"]
+[ext_resource type="PackedScene" uid="uid://coaviai855v3c" path="res://Scenes/move_trigger.tscn" id="7_8o5sq"]
 [ext_resource type="FontFile" uid="uid://c2kfs7ehcrn4u" path="res://Assets/fonts/PixelOperator8.ttf" id="7_yuh8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nb7ly"]
@@ -645,8 +645,6 @@ _data = {
 "RESET": SubResource("Animation_6i2bm")
 }
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_4rf2c"]
-
 [sub_resource type="Animation" id="Animation_t1bic"]
 resource_name = "Move"
 length = 3.0
@@ -801,17 +799,7 @@ libraries = {
 "": SubResource("AnimationLibrary_bdj5k")
 }
 
-[node name="Move Trigger" type="Area2D" parent="Platforms/Platform12"]
-position = Vector2(170, -56)
-rotation = 1.57139
-scale = Vector2(3.27605, 8.63277)
-disable_mode = 1
-collision_mask = 2
-script = ExtResource("7_5rxlc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform12/Move Trigger"]
-visibility_layer = 2
-shape = SubResource("SegmentShape2D_4rf2c")
+[node name="Move Trigger" parent="Platforms/Platform12" instance=ExtResource("7_8o5sq")]
 
 [node name="Platform11" parent="Platforms" instance=ExtResource("3_rgu3y")]
 position = Vector2(1349, -229)
@@ -838,8 +826,19 @@ theme_override_font_sizes/font_size = 8
 text = "Find the Four 
 CoinsTo win"
 
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 1277.0
+offset_top = 236.0
+offset_right = 1387.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(0.776471, 0.85098, 0.992157, 1)
+theme_override_fonts/font = ExtResource("7_yuh8e")
+theme_override_font_sizes/font_size = 8
+text = "No 
+coins 
+here"
+horizontal_alignment = 1
+
 [node name="Gun" parent="." instance=ExtResource("4_sdplr")]
 position = Vector2(0, 0)
 shooting_rate = 0.5
-
-[connection signal="body_entered" from="Platforms/Platform12/Move Trigger" to="Platforms/Platform12/Move Trigger" method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://coaviai855v3c"]
+
+[ext_resource type="Script" path="res://Scripts/platform_move_trigger.gd" id="1_akfue"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4rf2c"]
+
+[node name="Move Trigger" type="Area2D"]
+position = Vector2(170, -56)
+rotation = 1.57139
+scale = Vector2(3.27605, 8.63277)
+disable_mode = 1
+collision_mask = 2
+script = ExtResource("1_akfue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+shape = SubResource("SegmentShape2D_4rf2c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
