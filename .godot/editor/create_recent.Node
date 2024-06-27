@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 AnimationPlayer
 PlayerKiss
 PlayerDead
@@ -9,6 +11,4 @@ PlayerRunning
 PlayerIdle
 StateMachine
 Label
-CollisionShape2D
 Node2D
-Marker2D
