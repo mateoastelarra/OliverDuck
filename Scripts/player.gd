@@ -47,6 +47,7 @@ func _process(delta):
 func _physics_process(delta):	
 	# don´t move if kissing
 	if !kiss_finished:
+		move_and_slide()
 		return
 	
 	# Handle jump.
