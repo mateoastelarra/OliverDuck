@@ -6,6 +6,7 @@ signal bullet_shot(bullet_scene, location)
 @export var max_speed = 200
 @export var acceleration = 1000
 @export var friction = 1200
+@export var wall_jump_pushback = 1200
 
 # Jump
 @export var jump_height : float = 125
@@ -52,7 +53,9 @@ func _physics_process(delta):
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
-		if jump_available:
+		if is_on_wall() and !is_on_floor():
+			wall_jump()
+		elif jump_available:
 			jump()
 		else:
 			jump_buffer = true
@@ -108,6 +111,14 @@ func get_gravity() -> float:
 func jump() -> void:
 	velocity.y = jump_velocity
 	jump_available = false
+	
+func wall_jump() -> void:
+	if Input.is_action_pressed("ui_right"):
+		velocity.y = jump_velocity
+		velocity.x = -wall_jump_pushback
+	elif Input.is_action_pressed("ui_left"):
+		velocity.y = jump_velocity
+		velocity.x = wall_jump_pushback
 	
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
