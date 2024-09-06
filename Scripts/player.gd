@@ -7,6 +7,7 @@ signal bullet_shot(bullet_scene, location)
 @export var acceleration = 1000
 @export var friction = 1200
 @export var wall_jump_pushback = 1200
+@export var wall_slide_gravity = 100
 
 # Jump
 @export var jump_height : float = 125
@@ -27,6 +28,7 @@ var has_glided : bool = false
 var jump_available : bool = true
 var jump_buffer : bool = false
 var kiss_finished : bool = true
+var is_wall_sliding = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var muzzle = $Muzzle
@@ -79,6 +81,7 @@ func _physics_process(delta):
 	player_movement(direction, delta)
 	flip_sprite(direction)
 	update_shooting_direction()
+	wall_slide(delta)
 	
 
 func get_input():
@@ -123,6 +126,18 @@ func wall_jump() -> void:
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
 
+func wall_slide(delta):
+	if is_on_wall() and !is_on_floor():
+		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+			is_wall_sliding = true
+		else:
+			is_wall_sliding = false
+	else:
+		is_wall_sliding = false
+		
+	if is_wall_sliding:
+		velocity.y += (wall_slide_gravity * delta)
+		velocity.y = min(velocity.y, wall_slide_gravity)
 
 func update_shooting_direction():
 	var current_direction : Vector2 = Input.get_vector(
