@@ -1,8 +1,5 @@
-extends State
+extends PlayerOnFloor
 class_name PlayerIdle
-
-@onready var animated_sprite = $"../../AnimatedSprite2D"
-@onready var player = $"../.."
 
 func Enter():
 	animated_sprite.play("IdleSC")

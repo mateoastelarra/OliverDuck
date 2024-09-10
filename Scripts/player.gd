@@ -7,7 +7,7 @@ signal bullet_shot(bullet_scene, location)
 @export var acceleration = 1000
 @export var friction = 1200
 @export var wall_jump_pushback = 1200
-@export var wall_slide_gravity = 100
+@export var wall_slide_gravity = 0
 
 # Jump
 @export var jump_height : float = 125
@@ -53,27 +53,27 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 	
-	# Handle jump.
-	if Input.is_action_just_pressed("jump"):
-		if is_on_wall() and !is_on_floor():
-			wall_jump()
-		elif jump_available:
-			jump()
-		else:
-			jump_buffer = true
-			jump_buffer_timer.start()
-		
-	if not is_on_floor():
-		if jump_available:
-			if coyote_timer.is_stopped():
-				coyote_timer.start()
-		velocity.y += get_gravity() * delta
-	else:
-		jump_available = true
-		coyote_timer.stop()
-		if jump_buffer:
-			jump()
-			jump_buffer = false
+	## Handle jump.
+	#if Input.is_action_just_pressed("jump"):
+		#if is_on_wall() and !is_on_floor():
+			#wall_jump()
+		#elif jump_available:
+			#jump()
+		#else:
+			#jump_buffer = true
+			#jump_buffer_timer.start()
+		#
+	#if not is_on_floor():
+		#if jump_available:
+			#if coyote_timer.is_stopped():
+				#coyote_timer.start()
+		#velocity.y += get_gravity() * delta
+	#else:
+		#jump_available = true
+		#coyote_timer.stop()
+		#if jump_buffer:
+			#jump()
+			#jump_buffer = false
 		
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
@@ -106,6 +106,8 @@ func flip_sprite(direction):
 		animated_sprite.flip_h = true
 
 func get_gravity() -> float:
+	if is_on_wall_only() and (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
+		return wall_slide_gravity
 	if velocity.y < 0.0:
 		return jump_gravity
 	else:
@@ -136,8 +138,9 @@ func wall_slide(delta):
 		is_wall_sliding = false
 		
 	if is_wall_sliding:
-		velocity.y += (wall_slide_gravity * delta)
-		velocity.y = min(velocity.y, wall_slide_gravity)
+		#velocity.y += (wall_slide_gravity * delta)
+		#velocity.y = min(velocity.y, wall_slide_gravity)
+		velocity.y = 0
 
 func update_shooting_direction():
 	var current_direction : Vector2 = Input.get_vector(
@@ -151,11 +154,3 @@ func update_shooting_direction():
 		looking_direction = Vector2(-1,0)
 	else:
 		looking_direction = Vector2(1,0)
-
-
-func _on_jump_buffer_timer_timeout():
-	jump_buffer = false
-
-
-func _on_coyote_timer_timeout():
-	jump_available = false

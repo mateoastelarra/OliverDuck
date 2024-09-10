@@ -1,8 +1,5 @@
-extends State
+extends PlayerOnFloor
 class_name PlayerRunning
-
-@onready var player = $"../.."
-@onready var animated_sprite = $"../../AnimatedSprite2D"
 
 func Enter():
 	animated_sprite.play("WalkSC")
