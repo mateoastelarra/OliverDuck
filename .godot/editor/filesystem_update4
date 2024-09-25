@@ -1,4 +1,5 @@
 res://Scenes/game.tscn
+res://Scripts/State Machine/States/Player/player_on_floor.gd
 res://Scripts/player.gd
 res://Scenes/player.tscn
 res://Scenes/platform.tscn
@@ -8,8 +9,3 @@ res://Scenes/slime.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
-res://Scripts/State Machine/States/Player/player_wall_jumping.gd
-res://Scripts/State Machine/States/Player/player_idle.gd
-res://Scripts/State Machine/States/Player/player_on_floor.gd
-res://Scripts/State Machine/States/Player/player_running.gd
-res://Scripts/State Machine/state_machine.gd

@@ -399,6 +399,17 @@ size = Vector2(4.091, 13)
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_g73xu")
+max_speed = null
+acceleration = null
+friction = null
+wall_jump_pushback = null
+wall_slide_gravity = null
+jump_height = null
+jump_time_to_peak = null
+jump_time_to_descend = null
+falling_velocity_limit = null
+jump_buffer_time = null
+coyote_time = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)

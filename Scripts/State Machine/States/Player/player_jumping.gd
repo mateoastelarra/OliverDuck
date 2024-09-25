@@ -16,6 +16,7 @@ func Update(_delta: float):
 	
 func Physics_Update(_delta: float):
 	player.velocity.y += player.get_gravity() * _delta
+	print(player.velocity.y)
 	player.velocity.y = minf(player.velocity.y, player.falling_velocity_limit)
 	if player.velocity.y > 0:
 		Transitioned.emit(self, "PlayerFalling")

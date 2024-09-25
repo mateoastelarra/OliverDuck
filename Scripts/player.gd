@@ -19,32 +19,32 @@ signal bullet_shot(bullet_scene, location)
 #@export var gravity: float = 980
 @export var falling_velocity_limit: float = 400
 @export var jump_buffer_time : float = .1
-@export var coyote_time : float = .1
+#@export var coyote_time : float = .1
 
 var input = Vector2.ZERO
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 var looking_direction
 var has_glided : bool = false
-var jump_available : bool = true
-var jump_buffer : bool = false
+#var jump_available : bool = true
+#var jump_buffer : bool = false
 var kiss_finished : bool = true
 var is_wall_sliding = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var muzzle = $Muzzle
-@onready var jump_buffer_timer = $Timers/JumpBufferTimer
-@onready var coyote_timer = $Timers/CoyoteTimer
+#@onready var jump_buffer_timer = $StateMachine/PlayerOnFloor/JumpBufferTimer
+@onready var coyote_timer = $StateMachine/PlayerOnFloor/CoyoteTimer
 
 func _init():
 	Globals.set("player", self)
 
-func _ready():
-	jump_buffer_timer.wait_time = jump_buffer_time
-	jump_buffer_timer.one_shot = true	
-	coyote_timer.wait_time = coyote_time
+#func _ready():
+	#jump_buffer_timer.wait_time = jump_buffer_time
+	#jump_buffer_timer.one_shot = true	
+	#coyote_timer.wait_time = coyote_time
 		
-func _process(delta):
-	pass
+#func _process(delta):
+	#pass
 	
 	
 func _physics_process(delta):	
@@ -75,6 +75,7 @@ func _physics_process(delta):
 			#jump()
 			#jump_buffer = false
 		
+	
 	# -1 when left, 1 when right and 0 if none
 	var direction = Input.get_axis("move_left", "move_right")
 	
@@ -113,9 +114,9 @@ func get_gravity() -> float:
 	else:
 		return fall_gravity
 
-func jump() -> void:
-	velocity.y = jump_velocity
-	jump_available = false
+#func jump() -> void:
+	#velocity.y = jump_velocity
+	#jump_available = false
 	
 func wall_jump() -> void:
 	if Input.is_action_pressed("ui_right"):
