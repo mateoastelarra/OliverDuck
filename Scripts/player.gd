@@ -28,7 +28,7 @@ var has_glided : bool = false
 var jump_available : bool = true
 var jump_buffer : bool = false
 var kiss_finished : bool = true
-var is_wall_sliding = false
+var is_wall_grabbing = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var muzzle = $Muzzle
@@ -67,7 +67,8 @@ func _physics_process(delta):
 		if jump_available:
 			if coyote_timer.is_stopped():
 				coyote_timer.start()
-		velocity.y += get_gravity() * delta
+		if not is_wall_grabbing:
+			velocity.y += get_gravity() * delta
 	else:
 		jump_available = true
 		coyote_timer.stop()
@@ -81,7 +82,7 @@ func _physics_process(delta):
 	player_movement(direction, delta)
 	flip_sprite(direction)
 	update_shooting_direction()
-	wall_slide(delta)
+	wall_grab(delta)
 	
 
 func get_input():
@@ -126,18 +127,20 @@ func wall_jump() -> void:
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
 
-func wall_slide(delta):
+func wall_grab(delta):
 	if is_on_wall() and !is_on_floor():
 		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-			is_wall_sliding = true
+			is_wall_grabbing = true
 		else:
-			is_wall_sliding = false
+			is_wall_grabbing = false
 	else:
-		is_wall_sliding = false
+		is_wall_grabbing = false
 		
-	if is_wall_sliding:
-		velocity.y += (wall_slide_gravity * delta)
-		velocity.y = min(velocity.y, wall_slide_gravity)
+	if is_wall_grabbing:
+		velocity.y = 0;
+		# ToDo: después de unos segundos se debería cansar y activar un wall slide que cause lo siguiente:
+		#velocity.y += (wall_slide_gravity * delta)
+		#velocity.y = min(velocity.y, wall_slide_gravity)
 
 func update_shooting_direction():
 	var current_direction : Vector2 = Input.get_vector(
