@@ -1,3 +1,4 @@
+Timer
 CollisionShape2D
 Area2D
 AnimationPlayer
@@ -5,7 +6,6 @@ PlayerKiss
 PlayerDead
 State
 Node
-Timer
 PlayerGliding
 PlayerRunning
 PlayerIdle
