@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://uuoucxcrisf"]
+
+[ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_4cy4r"]
+[ext_resource type="PackedScene" uid="uid://bla22w7qrtost" path="res://Scenes/Camera.tscn" id="2_ftl21"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dwq0a"]
+size = Vector2(1000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wpsn"]
+size = Vector2(1002, 20)
+
+[node name="Level1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(481, 397)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+modulate = Color(0.396078, 0.278431, 0.0862745, 1)
+mesh = SubResource("QuadMesh_dwq0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_6wpsn")
+
+[node name="Player" parent="." instance=ExtResource("1_4cy4r")]
+position = Vector2(408, 207)
+
+[node name="Camera2D" parent="Player" instance=ExtResource("2_ftl21")]

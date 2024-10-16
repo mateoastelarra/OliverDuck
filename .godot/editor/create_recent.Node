@@ -1,8 +1,10 @@
+MeshInstance2D
+CollisionShape2D
+StaticBody2D
 Sprite2D
 ParallaxLayer
 ParallaxBackground
 Timer
-CollisionShape2D
 Area2D
 AnimationPlayer
 PlayerKiss
@@ -11,5 +13,3 @@ State
 Node
 PlayerGliding
 PlayerRunning
-PlayerIdle
-StateMachine

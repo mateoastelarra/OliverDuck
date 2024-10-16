@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=37 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
 [ext_resource type="Texture2D" uid="uid://curb3mrs2pv6o" path="res://Assets/sprites/world_tileset.png" id="2_3b8na"]
 [ext_resource type="PackedScene" uid="uid://b1dmcgw3t3y0x" path="res://Scenes/platform.tscn" id="3_rgu3y"]
+[ext_resource type="PackedScene" uid="uid://bla22w7qrtost" path="res://Scenes/Camera.tscn" id="4_i0pdq"]
 [ext_resource type="PackedScene" uid="uid://cc4tcq52mqt75" path="res://Scenes/Coin.tscn" id="4_m16pa"]
 [ext_resource type="PackedScene" uid="uid://cbubitgp263p0" path="res://Scenes/gun.tscn" id="4_sdplr"]
 [ext_resource type="PackedScene" uid="uid://bf7d2himtaxg5" path="res://Scenes/killzone.tscn" id="5_dj7mj"]
@@ -702,11 +703,7 @@ script = ExtResource("1_a2aop")
 [node name="Player" parent="." instance=ExtResource("1_xv1o1")]
 position = Vector2(-240, 1019)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -7)
-zoom = Vector2(2.5, 2.5)
-limit_smoothed = true
-position_smoothing_enabled = true
+[node name="Camera2D" parent="Player" instance=ExtResource("4_i0pdq")]
 
 [node name="Killzone" parent="." instance=ExtResource("5_dj7mj")]
 position = Vector2(-94, 318)
