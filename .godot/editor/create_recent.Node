@@ -1,3 +1,4 @@
+Node2D
 MeshInstance2D
 CollisionShape2D
 StaticBody2D
@@ -11,5 +12,3 @@ PlayerKiss
 PlayerDead
 State
 Node
-PlayerGliding
-PlayerRunning

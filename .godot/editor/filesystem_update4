@@ -1,5 +1,5 @@
-res://Scripts/player.gd
 res://Scenes/Level1.tscn
+res://Scripts/player.gd
 res://Scenes/game.tscn
 res://Scenes/player.tscn
 res://Scenes/platform.tscn
