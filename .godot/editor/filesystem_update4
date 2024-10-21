@@ -1,6 +1,5 @@
-res://Scenes/Level1.tscn
-res://Scripts/player.gd
 res://Scenes/game.tscn
+res://Scripts/player.gd
 res://Scenes/player.tscn
 res://Scenes/platform.tscn
 res://Scenes/Coin.tscn
@@ -9,3 +8,6 @@ res://Scenes/slime.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
+res://Scenes/Level1.tscn
+res://Scenes/shader_lab.tscn
+res://Scenes/shader1.gdshader

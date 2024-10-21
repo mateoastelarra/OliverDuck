@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://3icfwa5nsbth"]
+
+[ext_resource type="Shader" path="res://Scenes/shader1.gdshader" id="1_ytawd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmxr1"]
+shader = ExtResource("1_ytawd")
+shader_parameter/resolution = Vector2(600, 400)
+shader_parameter/line_color = Color(0.2, 0.3, 0.5, 1)
+shader_parameter/zoom = 20.0
+shader_parameter/thickness = 2.0
+shader_parameter/brightness = 2.0
+
+[node name="ShaderLab" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_mmxr1")
+offset_right = 600.0
+offset_bottom = 400.0
