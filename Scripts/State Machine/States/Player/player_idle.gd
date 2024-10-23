@@ -3,10 +3,12 @@ class_name PlayerIdle
 
 @onready var animated_sprite = $"../../AnimatedSprite2D"
 @onready var player = $"../.."
+@onready var player_wall_grab_timer = $"../../Timers/WallGrabTimer"
 
 func Enter():
 	animated_sprite.play("IdleSC")
 	player.has_glided = false
+	player_wall_grab_timer.start(4.) # ToDo: dejar de hardcodear param
 	
 func Exit():
 	pass

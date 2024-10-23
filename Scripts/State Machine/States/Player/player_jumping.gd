@@ -15,8 +15,11 @@ func Update(_delta: float):
 	pass
 	
 func Physics_Update(_delta: float):
-	if not player.is_wall_grabbing:
-		player.velocity.y += player.get_gravity() * _delta
-		player.velocity.y = minf(player.velocity.y, player.falling_velocity_limit)
+	player.velocity.y += player.get_gravity() * _delta
+	player.velocity.y = minf(player.velocity.y, player.falling_velocity_limit)
 	if player.velocity.y > 0:
 		Transitioned.emit(self, "PlayerFalling")
+		
+	if player.is_on_wall() and !player.is_on_floor():
+		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+			Transitioned.emit(self, "PlayerWallGrabbing")

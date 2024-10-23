@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=70 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cqly8htnj0t4" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar4.png" id="25_ak4vh"]
 [ext_resource type="Texture2D" uid="uid://be8jh30yk1fgw" path="res://Assets/sprites/Pato/Beso/patopjbso6.png" id="25_se71y"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_kiss.gd" id="41_3yph4"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_wall_grabbing.gd" id="42_kbwfn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3raph"]
 atlas = ExtResource("1_2udup")
@@ -450,6 +451,9 @@ script = ExtResource("20_rto33")
 
 [node name="PlayerKiss" type="Node" parent="StateMachine"]
 script = ExtResource("41_3yph4")
+
+[node name="PlayerWallGrabbing" type="Node" parent="StateMachine"]
+script = ExtResource("42_kbwfn")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerKiss" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]

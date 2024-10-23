@@ -20,7 +20,7 @@ signal bullet_shot(bullet_scene, location)
 @export var falling_velocity_limit: float = 400
 @export var jump_buffer_time : float = .1
 @export var coyote_time : float = .1
-@export var wall_grab_time : float = 4.
+@export var player_wall_grab_time : float = 4.
 
 var input = Vector2.ZERO
 var bullet_scene = preload("res://Scenes/bullet.tscn")
@@ -36,7 +36,7 @@ var can_wall_grab = true
 @onready var muzzle = $Muzzle
 @onready var jump_buffer_timer = $Timers/JumpBufferTimer
 @onready var coyote_timer = $Timers/CoyoteTimer
-@onready var wall_grab_timer = $Timers/WallGrabTimer
+@onready var player_wall_grab_timer = $Timers/WallGrabTimer
 
 func _init():
 	Globals.set("player", self)
@@ -45,7 +45,7 @@ func _ready():
 	jump_buffer_timer.wait_time = jump_buffer_time
 	jump_buffer_timer.one_shot = true	
 	coyote_timer.wait_time = coyote_time
-	wall_grab_timer.wait_time = wall_grab_time
+	player_wall_grab_timer.wait_time = player_wall_grab_time
 		
 func _process(delta):
 	pass
@@ -71,8 +71,8 @@ func _physics_process(delta):
 		if jump_available:
 			if coyote_timer.is_stopped():
 				coyote_timer.start()
-		if not is_wall_grabbing:
-			velocity.y += get_gravity() * delta
+		#if not is_wall_grabbing:
+			#velocity.y += get_gravity() * delta
 	else:
 		jump_available = true
 		coyote_timer.stop()
@@ -86,10 +86,10 @@ func _physics_process(delta):
 	player_movement(direction, delta)
 	flip_sprite(direction)
 	update_shooting_direction()
-	if can_wall_grab:
-		wall_grab(delta)
-	elif is_on_floor():
-		can_wall_grab = true
+	#if can_wall_grab:
+		#wall_grab(delta)
+	#elif is_on_floor():
+		#can_wall_grab = true
 	
 
 func get_input():
@@ -134,28 +134,27 @@ func wall_jump() -> void:
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
 
-func wall_grab(delta):
-	if is_on_wall() and !is_on_floor():
-		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-			if wall_grab_timer.is_stopped() and not is_wall_grabbing:
-				wall_grab_timer.start()
-				is_wall_grabbing = true
-		else:
-			is_wall_grabbing = false
-			wall_grab_timer.stop()
-	else:
-		is_wall_grabbing = false
-		wall_grab_timer.stop()
-		
-	if is_wall_grabbing:
-		velocity.y = 0;
-		print( wall_grab_timer.time_left)
-		if wall_grab_timer.time_left <= 0:
-		# ToDo: después de unos segundos se debería cansar y activar un wall slide que cause lo siguiente:
-			velocity.y += (wall_slide_gravity * delta)
-			velocity.y = min(velocity.y, wall_slide_gravity)
-			is_wall_grabbing = false
-			can_wall_grab = false
+#func wall_grab(delta):
+	#if is_on_wall() and !is_on_floor():
+		#if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+			#if player_wall_grab_timer.is_stopped() and not is_wall_grabbing:
+				#player_wall_grab_timer.start()
+				#is_wall_grabbing = true
+		#else:
+			#is_wall_grabbing = false
+			#player_wall_grab_timer.stop()
+	#else:
+		#is_wall_grabbing = false
+		#player_wall_grab_timer.stop()
+		#
+	#if is_wall_grabbing:
+		#velocity.y = 0;
+		#print( player_wall_grab_timer.time_left)
+		#if player_wall_grab_timer.time_left <= 0:
+			#velocity.y += (wall_slide_gravity * delta)
+			#velocity.y = min(velocity.y, wall_slide_gravity)
+			#is_wall_grabbing = false
+			#can_wall_grab = false
 			
 
 func update_shooting_direction():

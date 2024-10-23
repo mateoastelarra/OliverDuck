@@ -28,6 +28,10 @@ func Physics_Update(_delta: float):
 	elif Input.is_action_just_released("glide"):
 		Transitioned.emit(self, "PlayerFalling")
 		
+	if player.is_on_wall() and !player.is_on_floor():
+		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+			Transitioned.emit(self, "PlayerWallGrabbing")
+		
 
 
 func _on_gliding_timer_timeout():
