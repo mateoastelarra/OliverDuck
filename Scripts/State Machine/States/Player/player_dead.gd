@@ -6,7 +6,6 @@ class_name PlayerDead
 @onready var animated_sprite = $"../../AnimatedSprite2D"
 
 func Enter():
-	print("Im Dead and out od this world")
 	animated_sprite.play("DieP")
 
 func Exit():

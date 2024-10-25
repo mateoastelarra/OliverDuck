@@ -14,7 +14,6 @@ func add_point():
 
 func add_converted_animal():
 	converted_animals += 1
-	print(converted_animals)
 
 func take_screenshot():
 	var timestamp = Time.get_datetime_string_from_system(false, true).replace(":", "-")
