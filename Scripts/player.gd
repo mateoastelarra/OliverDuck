@@ -114,10 +114,7 @@ func flip_sprite(direction):
 		animated_sprite.flip_h = true
 
 func get_gravity() -> float:
-	if velocity.y < 0.0:
-		return jump_gravity
-	else:
-		return fall_gravity
+	return 0.0
 
 func jump() -> void:
 	velocity.y = jump_velocity

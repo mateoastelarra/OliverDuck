@@ -1,4 +1,14 @@
-res://Scenes/shader_lab.tscn
+res://Scenes/game.tscn
 res://Scripts/player.gd
 res://Assets/Shaders/book/cables.gdshader
 res://Assets/Shaders/book/shader1.gdshader
+res://Scenes/player.tscn
+res://Scenes/platform.tscn
+res://Scenes/Coin.tscn
+res://Scenes/killzone.tscn
+res://Scenes/slime.tscn
+res://Scenes/bullet.tscn
+res://Scenes/gun.tscn
+res://Scenes/health_component.tscn
+res://Scenes/Level1.tscn
+res://Scenes/shader_lab.tscn

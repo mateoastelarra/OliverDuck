@@ -6,8 +6,8 @@
 shader = ExtResource("1_ima27")
 shader_parameter/resolution = Vector2(600, 400)
 shader_parameter/line_color = Color(0.2, 0.3, 0.5, 1)
-shader_parameter/line_thickness = 0.06
-shader_parameter/brightness = 0.8
+shader_parameter/line_thickness = 0.18
+shader_parameter/brightness = 0.5
 shader_parameter/speed = 0.5
 shader_parameter/amp_coef = 0.1
 shader_parameter/freq_coef = 0.5

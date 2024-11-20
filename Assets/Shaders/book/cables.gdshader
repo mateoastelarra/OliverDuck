@@ -15,16 +15,22 @@ uniform float iterations: hint_range(1., 20.0, 1.) = 5.;
 
 vec3 draw_line(vec2 uv, vec3 color, float shift, float freq) {
 	uv.y += IS(0.0, 1.0, abs(uv.x)) * sin(uv.x + shift * freq) * amp_coef * sin(uv.x + shift);
-	return (IS(0.0, line_thickness * S(-0.2, .9, abs(uv.x)), abs(uv.y))) * color;
+	return (IS(0.0, 0.09 * S(-0.2, .9, abs(uv.x)), abs(uv.y))) * color;
 }
 
 void fragment() {
 	float shift = TIME * speed;
 	vec2 uv = UV - 0.5;
 	uv.x *= resolution.x / resolution.y; // fix the aspect ratio
-	vec3 color = vec3(0.0);
+	vec3 color = vec3(0.0, 0.0, 0.0);
 	for (float i = 0.0; i < iterations; i += 1.0) {
-		color += draw_line(uv, line_color, shift + i * 0.4, 1.0 + i * freq_coef);
+		color += draw_line(uv, line_color, shift + i * 0.001, 1.0 + i * freq_coef);
 	}
-	COLOR = vec4(color * brightness, 1.0);
+	float transparency = 1.;
+	// quiero que si es negro, devuelva 0.
+	if (color.r < .3 && color.g < .3 && color.b < .3)
+	{
+		transparency = .0;
+	};
+	COLOR = vec4(color * brightness, transparency);
 }
