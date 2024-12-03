@@ -1,3 +1,4 @@
+Timer
 State
 Node2D
 MeshInstance2D
@@ -6,7 +7,6 @@ StaticBody2D
 Sprite2D
 ParallaxLayer
 ParallaxBackground
-Timer
 Area2D
 AnimationPlayer
 PlayerKiss

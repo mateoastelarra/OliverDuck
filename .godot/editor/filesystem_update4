@@ -10,8 +10,3 @@ res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
 res://Scenes/Level1.tscn
 res://Scripts/State Machine/States/Player/player_wall_grabbing.gd
-res://Scripts/State Machine/States/Player/player_dead.gd
-res://Scripts/State Machine/States/Player/player_jumping.gd
-res://Scripts/State Machine/state_machine.gd
-res://Scripts/game_manager.gd
-res://Scripts/State Machine/States/Player/player_falling.gd
