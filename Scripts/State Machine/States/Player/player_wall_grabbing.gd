@@ -25,6 +25,7 @@ func Update(_delta: float):
 	pass
 
 func jump():
+	Transitioned.emit(self, "PlayerJumping")
 	jump_buffer_timer.start()
 	can_jump = false
 	if Input.is_action_pressed("ui_right"):
@@ -35,6 +36,7 @@ func jump():
 		player.velocity.x = player.wall_jump_pushback
 
 func air_jump():
+	Transitioned.emit(self, "PlayerJumping")
 	jump_buffer_timer.start()
 	can_jump = false
 	if Input.is_action_pressed("ui_right"):
@@ -49,14 +51,22 @@ func Physics_Update(_delta: float):
 	if player_wall_grab_timer.time_left <= 0:
 		Transitioned.emit(self, "PlayerFalling")
 	
+	print(player.is_on_wall())
 	if can_jump and Input.is_action_just_pressed("jump"):
 		jump()
-		Transitioned.emit(self, "PlayerJumping")
 	
-	if not Input.is_action_pressed("ui_left") or not Input.is_action_pressed("ui_right"):
-		await get_tree().create_timer(0.2).timeout
+	if not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+		# el siguiente timer espera el valor del param para pasar a la siguiente linea
+		await get_tree().create_timer(0.1).timeout
 		if can_jump and Input.is_action_just_pressed("jump"):
 			air_jump()
+		Transitioned.emit(self, "PlayerFalling")
+		
+	if not player.is_on_wall():
+		# el siguiente timer espera el valor del param para pasar a la siguiente linea
+		await get_tree().create_timer(0.1).timeout
+		if can_jump and Input.is_action_just_pressed("jump"):
+			jump()
 		Transitioned.emit(self, "PlayerFalling")
 
 func _on_wall_grab_jump_buffer_timer_timeout():
