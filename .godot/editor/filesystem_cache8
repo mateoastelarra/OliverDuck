@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733187827
+::res://::1733420938
 default_bus_layout.tres::AudioBusLayout::6993253927633494661::1719363115::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1719972146::0::1::::<><>::
 HealthComponent.gd::GDScript::-1::1719363115::0::1::::HealthComponent<>Node2D<>::
@@ -27,7 +27,7 @@ hurt.wav::AudioStreamWAV::8408279445680590281::1719363115::1719363115::1::::<><>
 jump.wav::AudioStreamWAV::7505367390862491256::1719363115::1719363115::1::::<><>::
 power_up.wav::AudioStreamWAV::1793651199466967314::1719363115::1719363115::1::::<><>::
 tap.wav::AudioStreamWAV::5929872145069909484::1719363115::1719363115::1::::<><>::
-::res://Assets/sprites/::1729127094
+::res://Assets/sprites/::1733269697
 coin.png::CompressedTexture2D::5566743133738556023::1719363115::1719363115::1::::<><>::
 fruit.png::CompressedTexture2D::2588272794591028286::1719363115::1719363115::1::::<><>::
 knight.png::CompressedTexture2D::5069575152947131373::1719363115::1719363115::1::::<><>::
@@ -35,8 +35,8 @@ platforms.png::CompressedTexture2D::6485478128961584509::1719363115::1719363115:
 slime_green.png::CompressedTexture2D::9083918293006150383::1719363115::1719363115::1::::<><>::
 slime_purple.png::CompressedTexture2D::7378111335152095886::1719363115::1719363115::1::::<><>::
 world_tileset.png::CompressedTexture2D::6211824038584379944::1719363115::1719363115::1::::<><>::
-::res://Assets/sprites/Background/::1729127094
-underground-wizards-lab.webp::CompressedTexture2D::8332598606382111864::1729127094::1729127094::1::::<><>::
+::res://Assets/sprites/Background/::1733269697
+underground-wizards-lab.webp::CompressedTexture2D::8332598606382111864::1733269697::1733269697::1::::<><>::
 ::res://Assets/sprites/Pato/::1720062297
 ::res://Assets/sprites/Pato/Beso/::1720062297
 patopjbso1.png::CompressedTexture2D::6979625122281835404::1720062297::1720062297::1::::<><>::
@@ -82,40 +82,40 @@ patopjsalto2.png::CompressedTexture2D::5595474203126527251::1720062297::17200622
 patopjsalto3.png::CompressedTexture2D::6371290763398856008::1720062297::1720062297::1::::<><>::
 patopjsalto4.png::CompressedTexture2D::6668476493297950785::1720062297::1720062297::1::::<><>::
 patopjsalto5.png::CompressedTexture2D::1147625964321825191::1720062297::1720062297::1::::<><>::
-::res://Scenes/::1733187815
-bullet.tscn::PackedScene::4106523534207288498::1733187810::0::1::::<><>::uid://bc41qe3tvl031::::res://Assets/sprites/fruit.png<>res://Scripts/bullet.gd
-Camera.tscn::PackedScene::3160186744649476567::1729127094::0::1::::<><>::
-Coin.tscn::PackedScene::4974244091941552202::1733187810::0::1::::<><>::res://Scripts/coin.gd<>uid://clktpfxti1wi6::::res://Assets/sprites/coin.png<>uid://bffgonj7dapqx::::res://Assets/sounds/coin.wav
-game.tscn::PackedScene::7499055649020020937::1733187815::0::1::::<><>::res://Scripts/game_manager.gd<>uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://curb3mrs2pv6o::::res://Assets/sprites/world_tileset.png<>uid://b1dmcgw3t3y0x::::res://Scenes/platform.tscn<>uid://bla22w7qrtost::::res://Scenes/Camera.tscn<>uid://cc4tcq52mqt75::::res://Scenes/Coin.tscn<>uid://cbubitgp263p0::::res://Scenes/gun.tscn<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://4hxx6kcc8uij::::res://Scenes/slime.tscn<>uid://coaviai855v3c::::res://Scenes/move_trigger.tscn<>uid://c2kfs7ehcrn4u::::res://Assets/fonts/PixelOperator8.ttf<>uid://dqymxf8fba6am::::res://Assets/sprites/Background/underground-wizards-lab.webp
-gun.tscn::PackedScene::4884393777380778639::1733187810::0::1::::<><>::res://Scripts/gun.gd
-health_component.tscn::PackedScene::8193658408545538872::1733187810::0::1::::<><>::res://HealthComponent.gd
-killzone.tscn::PackedScene::2803655738019436022::1733187810::0::1::::<><>::res://Scripts/killzone.gd
-Level1.tscn::PackedScene::42527950656170513::1733187810::0::1::::<><>::uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://bla22w7qrtost::::res://Scenes/Camera.tscn
+::res://Scenes/::1733363930
+bullet.tscn::PackedScene::4106523534207288498::1733363930::0::1::::<><>::uid://bc41qe3tvl031::::res://Assets/sprites/fruit.png<>res://Scripts/bullet.gd
+Camera.tscn::PackedScene::3160186744649476567::1733269697::0::1::::<><>::
+Coin.tscn::PackedScene::4974244091941552202::1733363930::0::1::::<><>::res://Scripts/coin.gd<>uid://clktpfxti1wi6::::res://Assets/sprites/coin.png<>uid://bffgonj7dapqx::::res://Assets/sounds/coin.wav
+game.tscn::PackedScene::7499055649020020937::1733363929::0::1::::<><>::res://Scripts/game_manager.gd<>uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://curb3mrs2pv6o::::res://Assets/sprites/world_tileset.png<>uid://b1dmcgw3t3y0x::::res://Scenes/platform.tscn<>uid://bla22w7qrtost::::res://Scenes/Camera.tscn<>uid://cc4tcq52mqt75::::res://Scenes/Coin.tscn<>uid://cbubitgp263p0::::res://Scenes/gun.tscn<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://4hxx6kcc8uij::::res://Scenes/slime.tscn<>uid://coaviai855v3c::::res://Scenes/move_trigger.tscn<>uid://c2kfs7ehcrn4u::::res://Assets/fonts/PixelOperator8.ttf<>uid://dqymxf8fba6am::::res://Assets/sprites/Background/underground-wizards-lab.webp
+gun.tscn::PackedScene::4884393777380778639::1733363930::0::1::::<><>::res://Scripts/gun.gd
+health_component.tscn::PackedScene::8193658408545538872::1733363930::0::1::::<><>::res://HealthComponent.gd
+killzone.tscn::PackedScene::2803655738019436022::1733363930::0::1::::<><>::res://Scripts/killzone.gd
+Level1.tscn::PackedScene::42527950656170513::1733363930::0::1::::<><>::uid://b8usw0nugvljn::::res://Scenes/player.tscn<>uid://bla22w7qrtost::::res://Scenes/Camera.tscn
 move_trigger.tscn::PackedScene::5756774535417089150::1720062297::0::1::::<><>::res://Scripts/platform_move_trigger.gd
 music.tscn::PackedScene::1086303053981222150::1719363115::0::1::::<><>::uid://c70ef4xiultgu::::res://Assets/music/time_for_adventure.mp3
-platform.tscn::PackedScene::4218256277469639129::1733187810::0::1::::<><>::uid://cynu43dgpjyoj::::res://Assets/sprites/platforms.png
-player.tscn::PackedScene::4745073606248845235::1733187815::0::1::::<><>::uid://ceh0frm8f1o42::::res://Assets/sprites/knight.png<>res://Scripts/player.gd<>res://Scripts/State Machine/state_machine.gd<>uid://hyg8xf2r7737::::res://Assets/sprites/Pato/IDLE/Idle1.png<>res://Scripts/State Machine/States/Player/player_idle.gd<>uid://bi1lrh5p66hn5::::res://Assets/sprites/Pato/IDLE/Idle2.png<>uid://d28ew2vu3at2q::::res://Assets/sprites/Pato/Planeo2/patopjplaneo1.png<>res://Scripts/State Machine/States/Player/player_running.gd<>uid://r3qiksmlcpmw::::res://Assets/sprites/Pato/IDLE/Idle3.png<>res://Scripts/State Machine/States/Player/player_jumping.gd<>uid://bped4suwp3ssp::::res://Assets/sprites/Pato/IDLE/Idle4.png<>uid://d5ogwajaiihw::::res://Assets/sprites/Pato/Planeo2/patopjplaneo2.png<>res://Scripts/State Machine/States/Player/player_falling.gd<>uid://b1xic2qahatog::::res://Assets/sprites/Pato/Caminar/caminar1.png<>res://Scripts/State Machine/States/Player/player_gliding.gd<>uid://bjmam25n713ph::::res://Assets/sprites/Pato/Idle Sin Caña/Idle1.png<>uid://cdx4n7fc8y5d1::::res://Assets/sprites/Pato/SALTO/salto5.png<>uid://b8tnq6xrumfq6::::res://Assets/sprites/Pato/Caminar/caminar2.png<>uid://cu27743tduqvg::::res://Assets/sprites/Pato/SALTO/salto3.png<>uid://dkulheyckqvvd::::res://Assets/sprites/Pato/Idle Sin Caña/Idle2.png<>uid://dmpig4s7xnwij::::res://Assets/sprites/Pato/Caminar/caminar3.png<>uid://bxbqrrjc0hm::::res://Assets/sprites/Pato/Caminar/caminar4.png<>uid://btlyoybcptbgh::::res://Assets/sprites/Pato/SALTO/salto4.png<>uid://dkreccuwrymml::::res://Assets/sprites/Pato/Idle Sin Caña/Idle3.png<>uid://ds2jtikmc21a6::::res://Assets/sprites/Pato/Idle Sin Caña/Idle4.png<>uid://balj4orlp4ln0::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto1.png<>uid://clyqv34nskyr8::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto2.png<>uid://cw1kh0t66k31e::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto3.png<>uid://c2ai3lus65tn2::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto4.png<>uid://c6o8n2mr24e3m::::res://Assets/sprites/Pato/Beso/patopjbso1.png<>res://Scripts/State Machine/States/Player/player_dead.gd<>uid://6lg2oiw4othl::::res://Assets/sprites/Pato/Beso/patopjbso2.png<>uid://l3cdyucvqha8::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar1.png<>uid://uusb3017hjc5::::res://Assets/sprites/Pato/Beso/patopjbso3.png<>uid://bkg46ge2up51i::::res://Assets/sprites/Pato/Beso/patopjbso4.png<>uid://y6ua27fekj8p::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar2.png<>uid://b2g1seslh7hj3::::res://Assets/sprites/Pato/Beso/patopjbso5.png<>uid://dsu8rh7if0b78::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar3.png<>uid://cqly8htnj0t4::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar4.png<>uid://be8jh30yk1fgw::::res://Assets/sprites/Pato/Beso/patopjbso6.png<>res://Scripts/State Machine/States/Player/player_kiss.gd<>res://Scripts/State Machine/States/Player/player_wall_grabbing.gd
-slime.tscn::PackedScene::2051366317641561425::1733187810::0::1::::<><>::uid://d2ok2paup1kah::::res://Assets/sprites/slime_green.png<>res://Scripts/slime.gd<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://do0cmes27mv6g::::res://Scenes/health_component.tscn
-::res://Scripts/::1733187815
+platform.tscn::PackedScene::4218256277469639129::1733363930::0::1::::<><>::uid://cynu43dgpjyoj::::res://Assets/sprites/platforms.png
+player.tscn::PackedScene::4745073606248845235::1733363930::0::1::::<><>::uid://ceh0frm8f1o42::::res://Assets/sprites/knight.png<>res://Scripts/player.gd<>res://Scripts/State Machine/state_machine.gd<>uid://hyg8xf2r7737::::res://Assets/sprites/Pato/IDLE/Idle1.png<>res://Scripts/State Machine/States/Player/player_idle.gd<>uid://bi1lrh5p66hn5::::res://Assets/sprites/Pato/IDLE/Idle2.png<>uid://d28ew2vu3at2q::::res://Assets/sprites/Pato/Planeo2/patopjplaneo1.png<>res://Scripts/State Machine/States/Player/player_running.gd<>uid://r3qiksmlcpmw::::res://Assets/sprites/Pato/IDLE/Idle3.png<>res://Scripts/State Machine/States/Player/player_jumping.gd<>uid://bped4suwp3ssp::::res://Assets/sprites/Pato/IDLE/Idle4.png<>uid://d5ogwajaiihw::::res://Assets/sprites/Pato/Planeo2/patopjplaneo2.png<>res://Scripts/State Machine/States/Player/player_falling.gd<>uid://b1xic2qahatog::::res://Assets/sprites/Pato/Caminar/caminar1.png<>res://Scripts/State Machine/States/Player/player_gliding.gd<>uid://bjmam25n713ph::::res://Assets/sprites/Pato/Idle Sin Caña/Idle1.png<>uid://cdx4n7fc8y5d1::::res://Assets/sprites/Pato/SALTO/salto5.png<>uid://b8tnq6xrumfq6::::res://Assets/sprites/Pato/Caminar/caminar2.png<>uid://cu27743tduqvg::::res://Assets/sprites/Pato/SALTO/salto3.png<>uid://dkulheyckqvvd::::res://Assets/sprites/Pato/Idle Sin Caña/Idle2.png<>uid://dmpig4s7xnwij::::res://Assets/sprites/Pato/Caminar/caminar3.png<>uid://bxbqrrjc0hm::::res://Assets/sprites/Pato/Caminar/caminar4.png<>uid://btlyoybcptbgh::::res://Assets/sprites/Pato/SALTO/salto4.png<>uid://dkreccuwrymml::::res://Assets/sprites/Pato/Idle Sin Caña/Idle3.png<>uid://ds2jtikmc21a6::::res://Assets/sprites/Pato/Idle Sin Caña/Idle4.png<>uid://balj4orlp4ln0::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto1.png<>uid://clyqv34nskyr8::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto2.png<>uid://cw1kh0t66k31e::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto3.png<>uid://c2ai3lus65tn2::::res://Assets/sprites/Pato/Salto Sin Caña/patopjsalto4.png<>uid://c6o8n2mr24e3m::::res://Assets/sprites/Pato/Beso/patopjbso1.png<>res://Scripts/State Machine/States/Player/player_dead.gd<>uid://6lg2oiw4othl::::res://Assets/sprites/Pato/Beso/patopjbso2.png<>uid://l3cdyucvqha8::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar1.png<>uid://uusb3017hjc5::::res://Assets/sprites/Pato/Beso/patopjbso3.png<>uid://bkg46ge2up51i::::res://Assets/sprites/Pato/Beso/patopjbso4.png<>uid://y6ua27fekj8p::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar2.png<>uid://b2g1seslh7hj3::::res://Assets/sprites/Pato/Beso/patopjbso5.png<>uid://dsu8rh7if0b78::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar3.png<>uid://cqly8htnj0t4::::res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar4.png<>uid://be8jh30yk1fgw::::res://Assets/sprites/Pato/Beso/patopjbso6.png<>res://Scripts/State Machine/States/Player/player_kiss.gd<>res://Scripts/State Machine/States/Player/player_wall_grabbing.gd
+slime.tscn::PackedScene::2051366317641561425::1733363930::0::1::::<><>::uid://d2ok2paup1kah::::res://Assets/sprites/slime_green.png<>res://Scripts/slime.gd<>uid://bf7d2himtaxg5::::res://Scenes/killzone.tscn<>uid://do0cmes27mv6g::::res://Scenes/health_component.tscn
+::res://Scripts/::1733359297
 bullet.gd::GDScript::-1::1719363115::0::1::::<>Area2D<>::
 Coin.gd::GDScript::-1::1719363115::0::1::::<>Area2D<>::
-game_manager.gd::GDScript::-1::1733187815::0::1::::<>Node<>::
+game_manager.gd::GDScript::-1::1733269697::0::1::::<>Node<>::
 Globals.gd::GDScript::-1::1719363115::0::1::::<>Node<>::
 gun.gd::GDScript::-1::1720062298::0::1::::<>Node2D<>::
 killzone.gd::GDScript::-1::1720062298::0::1::::Killzone<>Area2D<>::
 platform_move_trigger.gd::GDScript::-1::1720062298::0::1::::<>Area2D<>::
-player.gd::GDScript::-1::1733187815::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1733359297::0::1::::<>CharacterBody2D<>::
 slime.gd::GDScript::-1::1719528729::0::1::::Enemy<>Node2D<>::
-::res://Scripts/State Machine/::1733187815
+::res://Scripts/State Machine/::1733269697
 state.gd::GDScript::-1::1720062298::0::1::::State<>Node<>::
-state_machine.gd::GDScript::-1::1733187815::0::1::::StateMachine<>Node<>::
+state_machine.gd::GDScript::-1::1733269697::0::1::::StateMachine<>Node<>::
 ::res://Scripts/State Machine/States/::1720062297
-::res://Scripts/State Machine/States/Player/::1733187815
-player_dead.gd::GDScript::-1::1733187815::0::1::::PlayerDead<>State<>::
-player_falling.gd::GDScript::-1::1733187815::0::1::::PlayerFalling<>State<>::
-player_gliding.gd::GDScript::-1::1733187815::0::1::::PlayerGliding<>State<>::
-player_idle.gd::GDScript::-1::1733187815::0::1::::PlayerIdle<>State<>::
-player_jumping.gd::GDScript::-1::1733187815::0::1::::PlayerJumping<>State<>::
+::res://Scripts/State Machine/States/Player/::1733363929
+player_dead.gd::GDScript::-1::1733269697::0::1::::PlayerDead<>State<>::
+player_falling.gd::GDScript::-1::1733275025::0::1::::PlayerFalling<>State<>::
+player_gliding.gd::GDScript::-1::1733269697::0::1::::PlayerGliding<>State<>::
+player_idle.gd::GDScript::-1::1733269697::0::1::::PlayerIdle<>State<>::
+player_jumping.gd::GDScript::-1::1733363929::0::1::::PlayerJumping<>State<>::
 player_kiss.gd::GDScript::-1::1720062298::0::1::::PlayerKiss<>State<>::
 player_running.gd::GDScript::-1::1727359910::0::1::::PlayerRunning<>State<>::
-player_wall_grabbing.gd::GDScript::-1::1733187815::0::1::::PlayerWallGrabbing<>State<>::
+player_wall_grabbing.gd::GDScript::-1::1733363210::0::1::::PlayerWallGrabbing<>State<>::

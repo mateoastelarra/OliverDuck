@@ -18,7 +18,6 @@ func Update(_delta: float):
 func Physics_Update(_delta: float):
 	player.velocity.y += player.get_gravity() * _delta
 	player.velocity.y = minf(player.velocity.y, player.falling_velocity_limit)
-	print("falling", player.velocity.y)
 	if player.is_on_floor():
 		Transitioned.emit(self, "PlayerIdle")
 	elif Input.is_action_pressed("glide") and !player.has_glided:
