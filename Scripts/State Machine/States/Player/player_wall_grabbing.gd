@@ -24,19 +24,20 @@ func Physics_Update(_delta: float):
 	if player_wall_grab_timer.time_left <= 0:
 		Transitioned.emit(self, "PlayerFalling")
 	
-	if Input.is_action_just_pressed("jump") and player.input.x == 0:
-		var collision = player.get_last_slide_collision()
-		normal = collision.get_normal()
-
-		# Check if the normal vector is true and if it points left or right
-		if normal: 
-			#player.velocity.y = player.jump_velocity
-			if normal.x < 0:  # Wall is to the right
-				player_jumping.is_wall_jump_right = true
-			elif normal.x > 0:  # Wall is to the left
-				player_jumping.is_wall_jump_left = true
-		player.jump()
-		Transitioned.emit(self, "PlayerJumping")
+#DESCOMENTAR PARA ACTIVAR WALL JUMP BUGGEADO. TAMBIEN EN player_jumping
+	#if Input.is_action_just_pressed("jump") and player.input.x == 0:
+		#var collision = player.get_last_slide_collision()
+		#normal = collision.get_normal()
+#
+		## Check if the normal vector is true and if it points left or right
+		#if normal: 
+			##player.velocity.y = player.jump_velocity
+			#if normal.x < 0:  # Wall is to the right
+				#player_jumping.is_wall_jump_right = true
+			#elif normal.x > 0:  # Wall is to the left
+				#player_jumping.is_wall_jump_left = true
+		#player.jump()
+		#Transitioned.emit(self, "PlayerJumping")
 	
 	if not player.is_on_wall():
 		Transitioned.emit(self, "PlayerFalling")

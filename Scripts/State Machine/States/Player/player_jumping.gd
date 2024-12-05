@@ -21,6 +21,7 @@ func Update(_delta: float):
 func Physics_Update(_delta: float):
 	#var direction = Input.get_axis("move_left", "move_right")
 	if is_wall_jump_left or is_wall_jump_right:
+		#DESCOMENTAR PARA ACTIVAR WALL JUMP BUGGEADO. TAMBIEN EN player_wall_grabbing
 		print("player normal.x: ")
 		print(player_wall_grabbing.normal.x)
 		#player.velocity.y = player.jump_velocity
