@@ -3,11 +3,12 @@ class_name PlayerWallGrabbing
 
 @onready var player = $"../.."
 @onready var player_wall_grab_timer = $"../../Timers/WallGrabTimer"
+@onready var animated_sprite = $"../../AnimatedSprite2D"
 @onready var player_jumping = $"../PlayerJumping"
 @export var normal = 0
 
 func Enter():
-	# ToDo: sprite de agarrado de pared
+	animated_sprite.play("WallGrab")
 	if player_wall_grab_timer.is_stopped() == true:
 		player_wall_grab_timer.start()
 	else:

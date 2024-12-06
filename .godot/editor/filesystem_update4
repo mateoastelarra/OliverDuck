@@ -1,7 +1,6 @@
 res://Scenes/player.tscn
 res://Scripts/player.gd
 res://Scripts/State Machine/States/Player/player_wall_grabbing.gd
-res://Scripts/State Machine/States/Player/player_jumping.gd
 res://Scenes/game.tscn
 res://Scenes/platform.tscn
 res://Scenes/Coin.tscn

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://b8usw0nugvljn"]
+[gd_scene load_steps=72 format=3 uid="uid://b8usw0nugvljn"]
 
 [ext_resource type="Texture2D" uid="uid://ceh0frm8f1o42" path="res://Assets/sprites/knight.png" id="1_2udup"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g73xu"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://dsu8rh7if0b78" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar3.png" id="24_i7akm"]
 [ext_resource type="Texture2D" uid="uid://cqly8htnj0t4" path="res://Assets/sprites/Pato/Caminar Sin Caña/patopjcaminar4.png" id="25_ak4vh"]
 [ext_resource type="Texture2D" uid="uid://be8jh30yk1fgw" path="res://Assets/sprites/Pato/Beso/patopjbso6.png" id="25_se71y"]
+[ext_resource type="Texture2D" uid="uid://bqe0dwgnet4db" path="res://Assets/sprites/Pato/Agarrar/patopjagarrar1.png" id="34_lef3g"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_kiss.gd" id="41_3yph4"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Player/player_wall_grabbing.gd" id="42_kbwfn"]
 
@@ -142,6 +143,10 @@ region = Rect2(192, 96, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_edn8j"]
 atlas = ExtResource("1_2udup")
 region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv82v"]
+atlas = ExtResource("34_lef3g")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pvt2s"]
 animations = [{
@@ -390,6 +395,14 @@ animations = [{
 "loop": true,
 "name": &"WalkSC",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv82v")
+}],
+"loop": true,
+"name": &"WallGrab",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3y3g"]
@@ -403,10 +416,8 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"Kiss"
+animation = &"WallGrab"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.49012e-07, -11)

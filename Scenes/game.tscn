@@ -702,18 +702,6 @@ script = ExtResource("1_a2aop")
 
 [node name="Player" parent="." instance=ExtResource("1_xv1o1")]
 position = Vector2(-306, 793)
-max_speed = 200
-acceleration = 1000
-friction = 1200
-wall_jump_pushback = 1200
-wall_slide_gravity = 100
-jump_height = 62.0
-jump_time_to_peak = 0.3
-jump_time_to_descend = 0.25
-falling_velocity_limit = 400.0
-jump_buffer_time = 0.1
-coyote_time = 0.1
-player_wall_grab_time = 4.0
 
 [node name="Camera2D" parent="Player" instance=ExtResource("4_i0pdq")]
 
@@ -772,7 +760,6 @@ position = Vector2(0, 0)
 shooting_rate = 0.5
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 1)
