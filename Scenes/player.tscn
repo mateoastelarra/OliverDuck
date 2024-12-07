@@ -436,6 +436,9 @@ position = Vector2(0, -13)
 [node name="WallGrabTimer" type="Timer" parent="Timers"]
 one_shot = true
 
+[node name="ApplyGravityTimer" type="Timer" parent="Timers"]
+wait_time = 0.214
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_cjwcm")
 initial_state = NodePath("PlayerIdle")

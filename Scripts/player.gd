@@ -6,7 +6,6 @@ signal bullet_shot(bullet_scene, location)
 @export var max_speed = 200
 @export var acceleration = 1000
 @export var friction = 1200
-@export var wall_jump_pushback = 1200
 @export var wall_slide_gravity = 100
 
 # Jump
@@ -36,6 +35,7 @@ var can_wall_grab = true
 @onready var jump_buffer_timer = $Timers/JumpBufferTimer
 @onready var coyote_timer = $Timers/CoyoteTimer
 @onready var player_wall_grab_timer = $Timers/WallGrabTimer
+@onready var player_wall_grabbing = $"../PlayerWallGrabbing"
 
 func _init():
 	Globals.set("player", self)
