@@ -1,26 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://uuoucxcrisf"]
+[gd_scene load_steps=5 format=3 uid="uid://cimhal7s5ds0a"]
 
-[ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_4cy4r"]
-[ext_resource type="PackedScene" uid="uid://bla22w7qrtost" path="res://Scenes/Camera.tscn" id="2_ftl21"]
+[ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xk0b3"]
+[ext_resource type="PackedScene" uid="uid://bla22w7qrtost" path="res://Scenes/Camera.tscn" id="2_qfinf"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_dwq0a"]
 size = Vector2(1000, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wpsn"]
-size = Vector2(120.833, 4.68287)
+size = Vector2(1002, 20)
 
-[node name="Level1" type="Node2D"]
+[node name="backupLevel1" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_4cy4r")]
-position = Vector2(-200, -584)
+[node name="Player" parent="." instance=ExtResource("1_xk0b3")]
+position = Vector2(408, 207)
 
-[node name="Camera2D" parent="Player" instance=ExtResource("2_ftl21")]
-position = Vector2(3, 14)
+[node name="Camera2D" parent="Player" instance=ExtResource("2_qfinf")]
 
 [node name="Big Platforms" type="Node2D" parent="."]
 
 [node name="Platform" type="StaticBody2D" parent="Big Platforms"]
-visible = false
 position = Vector2(407, 1099)
 scale = Vector2(0.720001, 67.48)
 
@@ -31,7 +29,6 @@ mesh = SubResource("QuadMesh_dwq0a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Big Platforms/Platform"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_6wpsn")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Platform8" type="StaticBody2D" parent="Big Platforms"]
 position = Vector2(3232, 871)
@@ -154,18 +151,3 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_6wpsn")
 
 [node name="Small Platforms" type="Node2D" parent="."]
-
-[node name="Platform" type="StaticBody2D" parent="Small Platforms"]
-position = Vector2(607, 557)
-scale = Vector2(0.720001, 67.48)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Small Platforms/Platform"]
-modulate = Color(0.196078, 0.345098, 0.2, 1)
-position = Vector2(-1108.33, -12.5667)
-scale = Vector2(0.125, 0.244517)
-mesh = SubResource("QuadMesh_dwq0a")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Small Platforms/Platform"]
-position = Vector2(-1115.97, -12.5667)
-shape = SubResource("RectangleShape2D_6wpsn")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)

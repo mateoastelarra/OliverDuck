@@ -1,7 +1,7 @@
-res://Scenes/game.tscn
+res://Scenes/Level1.tscn
 res://Scripts/player.gd
-res://Scripts/State Machine/States/Player/player_wall_grabbing.gd
-res://Scripts/State Machine/States/Player/player_jumping.gd
+res://Assets/Shaders/fire.gdshader
+res://Scenes/game.tscn
 res://Scenes/player.tscn
 res://Scenes/platform.tscn
 res://Scenes/Coin.tscn
@@ -10,4 +10,4 @@ res://Scenes/slime.tscn
 res://Scenes/bullet.tscn
 res://Scenes/gun.tscn
 res://Scenes/health_component.tscn
-res://Scenes/Level1.tscn
+res://Scenes/backup_level_1.tscn

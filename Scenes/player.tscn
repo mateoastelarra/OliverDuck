@@ -437,7 +437,7 @@ position = Vector2(0, -13)
 one_shot = true
 
 [node name="ApplyGravityTimer" type="Timer" parent="Timers"]
-wait_time = 0.214
+wait_time = 0.108
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_cjwcm")

@@ -8,7 +8,7 @@ class_name PlayerWallGrabbing
 @export var normal = 0
 
 @export var wall_jump_pushback = 1200
-@export var wall_jump_velocity : float = (-2.0 * 30.) / 0.5
+@export var wall_jump_velocity : float = (-3.0 * 30.) / 0.5
 
 func Enter():
 	animated_sprite.play("WallGrab")

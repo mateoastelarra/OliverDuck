@@ -701,9 +701,10 @@ unique_name_in_owner = true
 script = ExtResource("1_a2aop")
 
 [node name="Player" parent="." instance=ExtResource("1_xv1o1")]
-position = Vector2(-1263, 181)
+position = Vector2(-225, 934)
 
 [node name="Camera2D" parent="Player" instance=ExtResource("4_i0pdq")]
+visible = false
 
 [node name="Killzone" parent="." instance=ExtResource("5_dj7mj")]
 position = Vector2(-94, 318)
@@ -765,7 +766,7 @@ shooting_rate = 0.5
 motion_scale = Vector2(0.5, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-792, 614)
+position = Vector2(-2964, 970)
 texture = ExtResource("9_06fe4")
 centered = false
 
