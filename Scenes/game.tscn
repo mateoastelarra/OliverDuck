@@ -1,6 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://de3ul6wkrag0p"]
+[gd_scene load_steps=41 format=3 uid="uid://de3ul6wkrag0p"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_a2aop"]
+[ext_resource type="Texture2D" uid="uid://bjmam25n713ph" path="res://Assets/sprites/Pato/Idle Sin Caña/Idle1.png" id="1_awrpr"]
+[ext_resource type="Script" path="res://Dialog.gd" id="1_gr0bv"]
 [ext_resource type="PackedScene" uid="uid://b8usw0nugvljn" path="res://Scenes/player.tscn" id="1_xv1o1"]
 [ext_resource type="Texture2D" uid="uid://curb3mrs2pv6o" path="res://Assets/sprites/world_tileset.png" id="2_3b8na"]
 [ext_resource type="PackedScene" uid="uid://b1dmcgw3t3y0x" path="res://Scenes/platform.tscn" id="3_rgu3y"]
@@ -12,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://coaviai855v3c" path="res://Scenes/move_trigger.tscn" id="7_8o5sq"]
 [ext_resource type="FontFile" uid="uid://c2kfs7ehcrn4u" path="res://Assets/fonts/PixelOperator8.ttf" id="7_yuh8e"]
 [ext_resource type="Texture2D" uid="uid://dqymxf8fba6am" path="res://Assets/sprites/Background/underground-wizards-lab.webp" id="9_06fe4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8s836"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucipy"]
+radius = 15.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nb7ly"]
 texture = ExtResource("2_3b8na")
@@ -687,6 +694,26 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="NPC1" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gr0bv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1"]
+shape = SubResource("CircleShape2D_8s836")
+debug_color = Color(0.890196, 0.145098, 0.709804, 0.933333)
+
+[node name="Idle1" type="Sprite2D" parent="NPC1/CollisionShape2D"]
+position = Vector2(78, 1003)
+texture = ExtResource("1_awrpr")
+flip_h = true
+
+[node name="ProximityArea" type="Area2D" parent="NPC1"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/ProximityArea"]
+shape = SubResource("CircleShape2D_ucipy")
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)
 tile_set = SubResource("TileSet_vvw3b")
@@ -702,9 +729,11 @@ script = ExtResource("1_a2aop")
 
 [node name="Player" parent="." instance=ExtResource("1_xv1o1")]
 position = Vector2(-225, 934)
+collision_layer = 1
 
 [node name="Camera2D" parent="Player" instance=ExtResource("4_i0pdq")]
 visible = false
+position_smoothing_speed = 8.0
 
 [node name="Killzone" parent="." instance=ExtResource("5_dj7mj")]
 position = Vector2(-94, 318)
@@ -771,7 +800,8 @@ texture = ExtResource("9_06fe4")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-1584, 1228)
+visible = false
+position = Vector2(-624, 653)
 texture = ExtResource("9_06fe4")
 centered = false
 
@@ -855,3 +885,5 @@ libraries = {
 "": SubResource("AnimationLibrary_bptl6")
 }
 autoplay = "Move"
+
+[connection signal="body_entered" from="NPC1/ProximityArea" to="NPC1" method="_on_proximity_area_body_entered"]
