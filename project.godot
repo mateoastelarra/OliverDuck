@@ -24,6 +24,10 @@ Globals="*res://Scripts/Globals.gd"
 
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scope/plugin.cfg")
+
 [input]
 
 jump={

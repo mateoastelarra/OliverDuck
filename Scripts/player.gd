@@ -42,7 +42,7 @@ func _init():
 
 func _ready():
 	jump_buffer_timer.wait_time = jump_buffer_time
-	jump_buffer_timer.one_shot = true	
+	jump_buffer_timer.one_shot = true
 	coyote_timer.wait_time = coyote_time
 	player_wall_grab_timer.wait_time = player_wall_grab_time
 		

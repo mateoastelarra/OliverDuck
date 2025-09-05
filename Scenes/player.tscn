@@ -381,9 +381,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_1orye")
-}, {
-"duration": 1.0,
 "texture": ExtResource("23_xhcxb")
 }, {
 "duration": 1.0,
@@ -391,6 +388,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("25_ak4vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1orye")
 }],
 "loop": true,
 "name": &"WalkSC",
@@ -416,7 +416,7 @@ script = ExtResource("1_g73xu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pvt2s")
-animation = &"WallGrab"
+animation = &"WalkSC"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
